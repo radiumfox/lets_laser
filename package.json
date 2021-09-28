@@ -1,0 +1,43 @@
+{
+  "name": "lets-laser",
+  "private": true,
+  "description": "Студия лазерной эпиляции",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "1.0.0",
+    "autoprefixer": "10.2.5",
+    "browser-sync": "2.26.14",
+    "gulp": "4.0.2",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "9.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "3.0.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
+    "sass": "^1.37.5",
+    "stylelint": "13.13.1",
+    "stylelint-config-htmlacademy": "0.1.10"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint .",
+    "test": "npm run editorconfig",
+    "build": "gulp styles",
+    "start": "gulp"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.scss"
+  ],
+  "engines": {
+    "node": "^12 || ^14"
+  }
+}
