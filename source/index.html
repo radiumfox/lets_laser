@@ -9,7 +9,7 @@
     <link rel="preload" type="font/woff2" href="../fonts/plain-medium.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/plain-regular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/plain-thin.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-semibold.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-regular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-light.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -18,29 +18,28 @@
     <header class="page-header" id="page-header">
       <div class="page-header__wrapper">
         <a class="page-header__logo">
-          <img class="page-header__logo-image" src="#" width="58" height="60" alt="Логотип">
+          <img class="page-header__logo-image" src="img/logo.svg" width="58" height="60" alt="Логотип">
         </a>
-        <address class="page-header__address">СПб Социалистическая улица, 21, 2 этаж</address>
+        <address class="page-header__address">СПб<br> Социалистическая улица, 21, 2 этаж</address>
         <nav class="main-nav main-nav--closed main-nav--nojs">
-          <!-- <button class="main-nav__toggle" type="button">
+          <button class="main-nav__toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="visually-hidden">Открыть меню</span>
-          </button> -->
-
-          <ul class="main-nav__list site-list">
-            <li class="site-list__item">
-              <a class="site-list__link" href="#about">О нас</a>
+          </button>
+          <ul class="main-nav__list collapse navbar-collapse" id="navbarSupportedContent">
+            <li class="main-nav__item">
+              <a href="#about">О нас</a>
             </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#prices">Цены</a>
+            <li class="main-nav__item">
+              <a href="#prices">Цены</a>
             </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#reviews">Отзывы</a>
+            <li class="main-nav__item">
+              <a href="#reviews">Отзывы</a>
             </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#faq">Вопросы</a>
+            <li class="main-nav__item">
+              <a href="#faq">Вопросы</a>
             </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#photos">Фото</a>
+            <li class="main-nav__item">
+              <a href="#photos">Фото</a>
             </li>
           </ul>
         </nav>
@@ -48,491 +47,638 @@
     </header>
 
     <main class="page-main">
-
       <section class="intro">
-        <h1>Let's laser
-          <span>Студия лазерной эпиляции</span>
-        </h1>
-        <a class="button" href="#">Записаться онлайн</a>
-        <p>скидка 50% на первое посещение</p>
+        <video class="intro__movie" autoplay muted loop>
+          <source src="img/pexels-koolshooters-8955991.mp4" type="video/mp4">
+        </video>
+        <div class="intro__wrapper" id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="intro__title carousel-item active">
+            <div class="intro__text">
+              <h1>Let's laser</h1>
+              <p>Студия лазерной эпиляции</p>
+            </div>
+          </div>
+          <div class="intro__box carousel-item">
+            <p class="intro__discount">Скидка 50% на&nbsp;первое посещение</p>
+          </div>
+          <div class="intro__button-box">
+            <div>
+              <a class="button" href="#">Записаться онлайн</a>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="about" id="about">
-        <div>
-          <h2>О нас</h2>
-          <p>LET'S LASER  - уникальная студия.</p>
-          <p>Мы сосредоточились исключительно на одной процедуре, для  того, чтобы довести уровень мастерства до высшей степень совершенства!</p>
-          <p>Давайте на чистоту, сейчас на рынке огромное количество студий, клиник, салонов. Там, где красиво, хороший сервис, эффективное оборудование - дорого, и наоборот - там, где  б/у аппарат за пять копеек, наплевательский сервис - доступная цена за процедуру.</p>
-          <p>Поэтому, вопреки слезам нашего финансиста, мы оказываем услуги в красивой, чистой, просторной студии, используя ТОП оборудование, предоставляя  наивысший сервис за очень доступную цену. Да, мы недополучаем прибыль, но наша задача - сделать мир лазерной эпиляции доступнее, не понижая качество услуг и сервиса. Аминь.</p>
-          <p>Наша главная цель - это довольный и счастливый клиент. А доволен клиент тогда, когда отличный результат. Именно поэтому мы не распыляемся на другие услуги, а нацелены стать лучшими в лазерной эпиляции!</p>
-        </div>
-        <div>
-          <img src="#" width="">
-          <button type="button">
-            <span class="visually-hidden">Чат</span>
-          </button>
+        <div class="about__wrapper">
+          <div class="about__content">
+            <div class="about__text-box">
+              <h2>О нас</h2>
+              <p>LET'S LASER  - уникальная студия.</p>
+              <p>Мы сосредоточились исключительно на одной процедуре, для  того, чтобы довести уровень мастерства до высшей степень совершенства!</p>
+              <p>Давайте на чистоту, сейчас на рынке огромное количество студий, клиник, салонов. Там, где красиво, хороший сервис, эффективное оборудование - дорого, и наоборот - там, где  б/у аппарат за пять копеек, наплевательский сервис - доступная цена за процедуру.</p>
+              <p>Поэтому, вопреки слезам нашего финансиста, мы оказываем услуги в красивой, чистой, просторной студии, используя ТОП оборудование, предоставляя  наивысший сервис за очень доступную цену. Да, мы недополучаем прибыль, но наша задача - сделать мир лазерной эпиляции доступнее, не понижая качество услуг и сервиса. Аминь.</p>
+              <p>Наша главная цель - это довольный и счастливый клиент. А доволен клиент тогда, когда отличный результат. Именно поэтому мы не распыляемся на другие услуги, а нацелены стать лучшими в лазерной эпиляции!</p>
+              </div>
+          </div>
+          <div class="about__movie-box">
+            <video class="about__movie" autoplay muted loop>
+              <source src="img/pexels-karolina-grabowska-8371229.mp4" type="video/mp4">
+            </video>
+            <button type="button">
+              <span class="visually-hidden">Чат</span>
+            </button>
+          </div>
+
         </div>
       </section>
 
       <section class="pricing" id="prices">
-        <h2>Цены</h2>
-        <ul class="pricing__tabs">
-          <li class="pricing__tab">
-            <a href="complexes">Комплексы <span>/</span></a>
-          </li>
-          <li class="pricing__tab">
-            <a href="abonements">Абонементы <span>/</span></a>
-          </li>
-        </ul>
+        <div class="pricing__wrapper">
+          <h2>Цены</h2>
 
-        <table id="complexes">
-          <tr>
-            <td></td>
-            <td>1 сеанс</td>
-            <td>
-              <span>4 сеанса</span>
-              <span>3 + 1 в подарок</span>
-            </td>
-            <td>
-              <span>6 сеансов</span>
-              <span>4 + 2 в подарок</span>
-            </td>
-            <td>
-              <span>10 сеансов</span>
-              <span>6 + 4 в подарок</span>
-            </td>
-          </tr>
-          <tr>
-            <th>lite<span>тотальное бикини и подмышки</span></th>
-            <td>2500</td>
-            <td>7500</td>
-            <td>10000</td>
-            <td>15000</td>
-          </tr>
-          <tr>
-            <th>standart<span>тотальное бикини, подмышки и голени</span></th>
-            <td>4300</td>
-            <td>12900</td>
-            <td>17200</td>
-            <td>25800</td>
-          </tr>
-          <tr>
-            <th>standart+<span>тотальное бикини, подмышки и ноги полностью</span></th>
-            <td>5200</td>
-            <td>15600</td>
-            <td>20800</td>
-            <td>31200</td>
-          </tr>
-          <tr>
-            <th>max<span>все тело, кроме рук</span></th>
-            <td>5800</td>
-            <td>17400</td>
-            <td>23200</td>
-            <td>34800</td>
-          </tr>
-          <tr>
-            <th>max+<span>все тело</span></th>
-            <td>6650</td>
-            <td>19950</td>
-            <td>26600</td>
-            <td>39900</td>
-          </tr>
-        </table>
+          <ul class="pricing__tabs tabs">
+            <li >
+              <a class="pricing__tab tab current" data-id="complexes" href="#">Комплексы <span>\</span></a>
+            </li>
+            <li >
+              <a class="pricing__tab tab" data-id="abonements" href="#">Абонементы <span>\</span></a>
+            </li>
+          </ul>
 
-        <table id="abonements">
-          <tr>
-            <td></td>
-            <td>1 сеанс</td>
-            <td>
-              <span>4 сеанса</span>
-              <span>3 + 1 в подарок</span>
-            </td>
-            <td>
-              <span>6 сеансов</span>
-              <span>4 + 2 в подарок</span>
-            </td>
-            <td>
-              <span>10 сеансов</span>
-              <span>6 + 4 в подарок</span>
-            </td>
-          </tr>
-          <tr>
-            <th>xs<span>лоб, межбровь, бакенбарды, скулы, щеки, верхняя губа, подбородок</span></th>
-            <td>450</td>
-            <td>1350</td>
-            <td>1800</td>
-            <td>2700</td>
-          </tr>
-          <tr>
-            <th>s<span>подмышки, ареолы, линия живота, межягодичная зона, кисти рук + пальцы, стопы + пальцы </span></th>
-            <td>650</td>
-            <td>1950</td>
-            <td>2600</td>
-            <td>3900</td>
-          </tr>
-          <tr>
-            <th>m<span>лицо полностью, шея, декольте, грудь, живот, поясница, ягодицы, бикини классика, руки ниже и выше локтя</span></th>
-            <td>1500</td>
-            <td>4500</td>
-            <td>6000</td>
-            <td>9000</td>
-          </tr>
-          <tr>
-            <th>l<span>руки полностью, спина полностью, бедра, голени, тотальное бикини</span></th>
-            <td>2200</td>
-            <td>6600</td>
-            <td>8800</td>
-            <td>13200</td>
-          </tr>
-          <tr>
-            <th>xl<span>ноги полностью</span></th>
-            <td>3300</td>
-            <td>9900</td>
-            <td>13200</td>
-            <td>19800</td>
-          </tr>
-        </table>
+          <table class="pricing__table tab-content current" id="complexes">
+            <tr class="pricing__sessions">
+              <td></td>
+              <td>
+                <div class="pricing__box">
+                  <span>1 сеанс</span>
+                </div>
+              </td>
+              <td>
+                <div class="pricing__box">
+                  <span>4 сеанса</span>
+                  <span>3 + 1 в подарок</span>
+                </div>
+              </td>
+              <td>
+                <div class="pricing__box">
+                  <span>6 сеансов</span>
+                  <span>4 + 2 в подарок</span>
+                </div>
+              </td>
+              <td>
+                <div class="pricing__box">
+                  <span>10 сеансов</span>
+                  <span>6 + 4 в подарок</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  lite
+                  <span>тотальное бикини и подмышки</span>
+                </div>
+              </th>
+              <td>2500</td>
+              <td>7500</td>
+              <td>10 000</td>
+              <td>15 000</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  standart
+                  <span>тотальное бикини, подмышки и голени</span>
+                </div>
+              </th>
+              <td>4300</td>
+              <td>12900</td>
+              <td>17 200</td>
+              <td>25 800</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  standart+
+                  <span>тотальное бикини, подмышки и ноги полностью</span>
+                </div>
+              </th>
+              <td>5200</td>
+              <td>15 600</td>
+              <td>20 800</td>
+              <td>31 200</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  max
+                  <span>все тело, кроме рук</span>
+                </div>
+              </th>
+              <td>5800</td>
+              <td>17 400</td>
+              <td>23 200</td>
+              <td>34 800</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  max+
+                  <span>все тело</span>
+                </div>
+              </th>
+              <td>6650</td>
+              <td>19 950</td>
+              <td>26 600</td>
+              <td>39 900</td>
+            </tr>
+          </table>
+
+          <table class="pricing__table tab-content" id="abonements">
+            <tr class="pricing__sessions">
+              <td></td>
+              <td>
+                <div class="pricing__box">
+                  <span>1 сеанс</span>
+                </div>
+              </td>
+              <td>
+                <div class="pricing__box">
+                  <span>4 сеанса</span>
+                  <span>3 + 1 в подарок</span>
+                </div>
+              </td>
+              <td>
+                <div class="pricing__box">
+                  <span>6 сеансов</span>
+                  <span>4 + 2 в подарок</span>
+                </div>
+              </td>
+              <td>
+                <div class="pricing__box">
+                  <span>10 сеансов</span>
+                  <span>6 + 4 в подарок</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  xs<span>лоб, межбровь, бакенбарды, скулы, щеки, верхняя губа, подбородок</span>
+                </div>
+              </th>
+              <td>450</td>
+              <td>1350</td>
+              <td>1800</td>
+              <td>2700</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  s<span>подмышки, ареолы, линия живота, межягодичная зона, кисти рук + пальцы, стопы + пальцы </span>
+                </div>
+              </th>
+              <td>650</td>
+              <td>1950</td>
+              <td>2600</td>
+              <td>3900</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  m<span>лицо полностью, шея, декольте, грудь, живот, поясница, ягодицы, бикини классика, руки ниже и выше локтя</span>
+                </div>
+              </th>
+              <td>1500</td>
+              <td>4500</td>
+              <td>6000</td>
+              <td>9000</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  l<span>руки полностью, спина полностью, бедра, голени, тотальное бикини</span>
+                </div>
+              </th>
+              <td>2200</td>
+              <td>6600</td>
+              <td>8800</td>
+              <td>13 200</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="pricing__th-box">
+                  xl<span>ноги полностью</span>
+                </div>
+              </th>
+              <td>3300</td>
+              <td>9900</td>
+              <td>13 200</td>
+              <td>19 800</td>
+            </tr>
+          </table>
+        </div>
       </section>
 
       <section class="reviews" id="reviews">
         <h2>Отзывы</h2>
-        <ul class="reviews__list">
-          <li class="reviews__item">
-            <blockquote class="reviews__content">
-              <div class="reviews__author">
-                <picture>
-                  <source type="image/webp" srcset="img/avatars/review-1.webp 1x, img/avatars/review-1@2x.webp 2x">
-                  <img class="review__author-img" src="img/avatars/review-1.png" srcset="img/avatars/review-1@2x.png 2x" width="37" height="38" alt="Аватар автора">
-                </picture>
-                <cite class="review__author-name">Галина Таранова <span>41 отзыв</span></cite>
-                <p class="reviews__date">13 сентября 2021, отредактирован</p>
-                <div class="stars">
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                </div>
-              </div>
-              <p class="reviews__text">
-                Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
-              </p>
-              <div>
-                <span></span>
-                <span>Полезно -</span>
-                <span>0</span>
-              </div>
-            </blockquote>
-          </li>
-          <li class="reviews__item">
-            <blockquote class="reviews__content">
-              <div class="reviews__author">
-                <picture>
-                  <source type="image/webp" srcset="img/avatars/review-1.webp 1x, img/avatars/review-1@2x.webp 2x">
-                  <img class="review__author-img" src="img/avatars/review-1.png" srcset="img/avatars/review-1@2x.png 2x" width="37" height="38" alt="Аватар автора">
-                </picture>
-                <cite class="review__author-name">Галина Таранова <span>41 отзыв</span></cite>
-                <p class="reviews__date">13 сентября 2021, отредактирован</p>
-                <div class="stars">
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                </div>
-              </div>
-              <p class="reviews__text">
-                Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
-              </p>
-              <div>
-                <span></span>
-                <span>Полезно -</span>
-                <span>0</span>
-              </div>
-            </blockquote>
-          </li>
-          <li class="reviews__item">
-            <blockquote class="reviews__content">
-              <div class="reviews__author">
-                <picture>
-                  <source type="image/webp" srcset="img/avatars/review-1.webp 1x, img/avatars/review-1@2x.webp 2x">
-                  <img class="review__author-img" src="img/avatars/review-1.png" srcset="img/avatars/review-1@2x.png 2x" width="37" height="38" alt="Аватар автора">
-                </picture>
-                <cite class="review__author-name">Галина Таранова <span>41 отзыв</span></cite>
-                <p class="reviews__date">13 сентября 2021, отредактирован</p>
-                <div class="stars">
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                  <span class="star"></span>
-                </div>
-              </div>
-              <p class="reviews__text">
-                Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
-              </p>
-              <div>
-                <span></span>
-                <span>Полезно -</span>
-                <span>0</span>
-              </div>
-            </blockquote>
-          </li>
-        </ul>
-        <ul class="pagination">
-          <li class="current"><a>1 <span>\4</span></a></li>
-          <li><a>2 <span>\4</span></a></li>
-          <li><a>3 <span>\4</span></a></li>
-          <li><a>4 <span>\4</span></a></li>
-        </ul>
+        <div class="reviews__wrapper">
+          <div class="slider">
+            <ul class="reviews__list slider__list">
+              <li class="reviews__item slider__item current">
+                <img src="img/review-desk.jpg" width="351" height="166">
+                <!-- <blockquote class="reviews__content">
+                  <div class="reviews__author">
+                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
+                    <cite>
+                      Галина Таранова <span>41 отзыв</span>
+                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
+                    </cite>
+                    <div class="stars">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                    </div>
+                  </div>
+                  <p class="reviews__text">
+                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
+                  </p>
+                  <div class="reviews__rate">
+                    <span class="reviews__thumb"></span>
+                    <span>Полезно </span>
+                    <span>0</span>
+                  </div>
+                </blockquote> -->
+              </li>
+              <li class="reviews__item slider__item">
+                <img src="img/review-desk.jpg" width="351" height="166">
+                <!-- <blockquote class="reviews__content">
+                  <div class="reviews__author">
+                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
+                    <cite>
+                      Галина Таранова <span>41 отзыв</span>
+                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
+                    </cite>
+                    <div class="stars">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                    </div>
+                  </div>
+                  <p class="reviews__text">
+                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
+                  </p>
+                  <div class="reviews__rate">
+                    <span class="reviews__thumb"></span>
+                    <span>Полезно </span>
+                    <span>0</span>
+                  </div>
+                </blockquote> -->
+              </li>
+              <li class="reviews__item slider__item">
+                <img src="img/review-desk.jpg" width="351" height="166">
+                <!-- <blockquote class="reviews__content">
+                  <div class="reviews__author">
+                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
+                    <cite>
+                      Галина Таранова <span>41 отзыв</span>
+                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
+                    </cite>
+                    <div class="stars">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                    </div>
+                  </div>
+                  <p class="reviews__text">
+                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
+                  </p>
+                  <div class="reviews__rate">
+                    <span class="reviews__thumb"></span>
+                    <span>Полезно </span>
+                    <span>0</span>
+                  </div>
+                </blockquote> -->
+              </li>
+              <li class="reviews__item slider__item">
+                <img src="img/review-desk.jpg" width="351" height="166">
+                <!-- <blockquote class="reviews__content">
+                  <div class="reviews__author">
+                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
+                    <cite>
+                      Галина Таранова <span>41 отзыв</span>
+                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
+                    </cite>
+                    <div class="stars">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                    </div>
+                  </div>
+                  <p class="reviews__text">
+                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
+                  </p>
+                  <div class="reviews__rate">
+                    <span class="reviews__thumb"></span>
+                    <span>Полезно </span>
+                    <span>0</span>
+                  </div>
+                </blockquote> -->
+              </li>
+            </ul>
+            <ul class="slider__controls tabs">
+              <li class="slider__control current"><a>1<span>\ 4</span></a></li>
+              <li class="slider__control"><a>2<span>\ 4</span></a></li>
+              <li class="slider__control"><a>3<span>\ 4</span></a></li>
+              <li class="slider__control"><a>4<span>\ 4</span></a></li>
+            </ul>
+          </div>
+          <video class="reviews__movie" autoplay muted loop>
+            <source src="img/pexels-anna-nekrashevich-8516672.mp4" type="video/mp4">
+          </video>
+        </div>
       </section>
 
       <section class="faq" id="faq">
-        <ul class="faq__list">
-          <li class="faq__item">
-            <button type="button">Каковы основные преимущества лазерной эпиляции?</button>
-            <div>
-              <ul>
-                <li>Вы избавитесь от надоедливых волос быстро, безболезненно и безопасно.</li>
-                <li>Выбирая лазерную эпиляцию, Вы экономите свои деньги и время. Только представьте, сколько станков, кремов для депиляции, воска или сахара Вы тратите за всю свою жизнь? Получая в итоге щетину, врастания, болячки и тёмные пятна.</li>
-                <li>Вы выбираете комфорт и уверенность в себе!</li>
-                <li>Это безболезненно! Присутствует лишь тепло и лёгкое покалывание.</li>
-                <li>Вы получаете гладкую и здоровую кожу!</li>
-              </ul>
-              <p>Необходимое количество визитов:</p>
-              <ul>
-                <li>для чёрных и темных волос в среднем 10-12 процедур</li>
-                <li>для русых волос в среднем 12-14 процедур</li>
-              </ul>
-              <p>Строгая периодичность от 25-30 дней</p>
-            </div>
-          </li>
-          <li class="faq__item">
-            <button type="button">На каком аппарате вы работаете?</button>
-            <div>
-              <p>В нашей студии мы работаем на аппарате  для лазерной эпиляции AnchorFree 808‑M.</p>
-              <p>Его приемущества:</p>
-              <ul>
-                <li>
-                  Диодный лазер 808м использует сапфировую головку для охлаждения и защиты эпидермиса при 0°C, которая делает процесс удаления волос безболезненным и комфортным.
-                </li>
-                <li>
-                  Лазерный излучатель имеет пятно размером 12×12 мм². Таким образом, удаление волос происходит с высокой скоростью.
-                </li>
-                <li>
-                  Аппарат AnchorFree 808‑M применяет уникальную технологию двойного лазерного импульса с эффективным и комфортным удалением волос.
-                </li>
-                <li>
-                  Система охлаждения микроканала с использованием воды, а не фреона. AnchorFree 808‑M отличается высоким качеством и безопасностью.
-                </li>
-                <li>
-                  Производитель лазерного излучателя «Dilas», Германия
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="faq__item">
-            <button type="button">Какие есть противопоказания?</button>
-            <div>
-              <ul>
-                <li>Беременность и лактация</li>
-                <li>Возраст до 18 лет</li>
-                <li>Загорелая кожа</li>
-                <li>Биоэпиляция</li>
-                <li>Воспалительные явления в области обработки</li>
-                <li>Повреждения кожи</li>
-                <li>Прием препаратов, вызывающих светочувствительность</li>
-                <li>Острые инфекционные заболевания</li>
-                <li>Хронические заболевания кожи (псориаз, атопический дерматит, и т.д.)</li>
-                <li>В случаях витилиго в семейном анамнезе</li>
-                <li>Сахарный диабет (декомпенсированная стадия)</li>
-                <li>Онкологические патологии</li>
-                <li>СПИД и ВИЧ</li>
-                <li>Келлоидные рубцы</li>
-                <li>Герпес в анамнезе</li>
-                <li>Аллергия на свет или/и солнце</li>
-                <li>Прохождение процедур химио- и радиотерапии</li>
-                <li>Психоэмоциональная нестабильность</li>
-                <li>Заболевания внутренних органов (печень, надпочечники, яичники)</li>
-                <li>Татуировка в зоне воздействия</li>
-              </ul>
-            </div>
-          </li>
+        <div class="faq__wrapper ">
+          <h2>Вопросы</h2>
+          <ul class="faq__list">
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Каковы основные преимущества лазерной эпиляции?</button>
+              <div class="faq__content collapse" id="collapseOne">
+                <ul>
+                  <li>Вы избавитесь от надоедливых волос быстро, безболезненно и безопасно.</li>
+                  <li>Выбирая лазерную эпиляцию, Вы экономите свои деньги и время. Только представьте, сколько станков, кремов для депиляции, воска или сахара Вы тратите за всю свою жизнь? Получая в итоге щетину, врастания, болячки и тёмные пятна.</li>
+                  <li>Вы выбираете комфорт и уверенность в себе!</li>
+                  <li>Это безболезненно! Присутствует лишь тепло и лёгкое покалывание.</li>
+                  <li>Вы получаете гладкую и здоровую кожу!</li>
+                </ul>
+                <p>Необходимое количество визитов:</p>
+                <ul>
+                  <li>для чёрных и темных волос в среднем 10-12 процедур</li>
+                  <li>для русых волос в среднем 12-14 процедур</li>
+                </ul>
+                <p>Строгая периодичность от 25-30 дней</p>
+              </div>
+            </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">На каком аппарате вы работаете?</button>
+              <div class="faq__content collapse" id="collapseTwo">
+                <p>В нашей студии мы работаем на аппарате  для лазерной эпиляции AnchorFree 808‑M.</p>
+                <p>Его приемущества:</p>
+                <ul>
+                  <li>
+                    Диодный лазер 808м использует сапфировую головку для охлаждения и защиты эпидермиса при 0°C, которая делает процесс удаления волос безболезненным и комфортным.
+                  </li>
+                  <li>
+                    Лазерный излучатель имеет пятно размером 12×12 мм². Таким образом, удаление волос происходит с высокой скоростью.
+                  </li>
+                  <li>
+                    Аппарат AnchorFree 808‑M применяет уникальную технологию двойного лазерного импульса с эффективным и комфортным удалением волос.
+                  </li>
+                  <li>
+                    Система охлаждения микроканала с использованием воды, а не фреона. AnchorFree 808‑M отличается высоким качеством и безопасностью.
+                  </li>
+                  <li>
+                    Производитель лазерного излучателя «Dilas», Германия
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">Какие есть противопоказания?</button>
+              <div class="faq__content collapse" id="collapseThree">
+                <ul>
+                  <li>Беременность и лактация</li>
+                  <li>Возраст до 18 лет</li>
+                  <li>Загорелая кожа</li>
+                  <li>Биоэпиляция</li>
+                  <li>Воспалительные явления в области обработки</li>
+                  <li>Повреждения кожи</li>
+                  <li>Прием препаратов, вызывающих светочувствительность</li>
+                  <li>Острые инфекционные заболевания</li>
+                  <li>Хронические заболевания кожи (псориаз, атопический дерматит, и т.д.)</li>
+                  <li>В случаях витилиго в семейном анамнезе</li>
+                  <li>Сахарный диабет (декомпенсированная стадия)</li>
+                  <li>Онкологические патологии</li>
+                  <li>СПИД и ВИЧ</li>
+                  <li>Келлоидные рубцы</li>
+                  <li>Герпес в анамнезе</li>
+                  <li>Аллергия на свет или/и солнце</li>
+                  <li>Прохождение процедур химио- и радиотерапии</li>
+                  <li>Психоэмоциональная нестабильность</li>
+                  <li>Заболевания внутренних органов (печень, надпочечники, яичники)</li>
+                  <li>Татуировка в зоне воздействия</li>
+                </ul>
+              </div>
+            </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">Почему нельзя удалить все волосы за 1 сеанс?</button>
+              <div class="faq__content collapse" id="collapseFour">
+                <p>Лазер может полностью разрушить только волосяные фолликулы, находящиеся в стадии активного роста. Таких фолликулов на всём теле единовременно может быть от 5% до 30%, остальные находятся в недоступной для лазера фазе (в спящей).</p>
+                <p>Через 1-2 месяца постепенно активизируются другие волоски, которые на момент проведения процедуры находились в стадии покоя, именно они подлежат повторной обработке и так раз за разом.</p>
+                <p>Чтобы удалить все волосы на теле в стадии активного роста, нужен индивидуальный курс процедур. В среднем он составляет 12 сеансов для черных волос и 14 для русых. С каждой процедурой волосков будет становиться все меньше и меньше, до полного их исчезновения.</p>
+                <p>Важно!</p>
+                <p>Соблюдать дисциплину и обязательно следовать всем рекомендациям своего специалиста в период всего курса Лазерной эпиляции.</p>
+              </div>
+            </li>
 
-          <li class="faq__item">
-            <button type="button">Почему нельзя удалить все волосы за 1 сеанс?</button>
-            <div>
-              <p>Лазер может полностью разрушить только волосяные фолликулы, находящиеся в стадии активного роста. Таких фолликулов на всём теле единовременно может быть от 5% до 30%, остальные находятся в недоступной для лазера фазе (в спящей).</p>
-              <p>Через 1-2 месяца постепенно активизируются другие волоски, которые на момент проведения процедуры находились в стадии покоя, именно они подлежат повторной обработке и так раз за разом.</p>
-              <p>Чтобы удалить все волосы на теле в стадии активного роста, нужен индивидуальный курс процедур. В среднем он составляет 12 сеансов для черных волос и 14 для русых. С каждой процедурой волосков будет становиться все меньше и меньше, до полного их исчезновения.</p>
-              <p>Важно!</p>
-              <p>Соблюдать дисциплину и обязательно следовать всем рекомендациям своего специалиста в период всего курса Лазерной эпиляции.</p>
-            </div>
-          </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">Можно ли делать эпиляцию в критические дни?</button>
+              <div class="faq__content collapse" id="collapseFive">
+                <p>Специалисты в LET’S LASER считают, что прямого запрета на проведение Лазерной эпиляции во время месячных не существует. Но следует учесть, что:</p>
+                <ul>
+                  <li>⋆ в критические дни повышается чувствительность в таких деликатных местах, как подмышки и бикини.</li>
+                  <li>⋆ если «эти» дни у вас сопровождаются резкими болями и ухудшением самочувствия, то процедуру лучше перенести на другой день.</li>
+                  <li>⋆ если у вас хорошая переносимость КД (месячных), то отменять процедуру не обязательно, просто позаботьтесь о гигиене (используйте тампон вместо прокладок).</li>
+                </ul>
+              </div>
+            </li>
 
-          <li class="faq__item">
-            <button type="button">Можно ли делать эпиляцию в критические дни?</button>
-            <div>
-              <p>Специалисты в LET’S LASER считают, что прямого запрета на проведение Лазерной эпиляции во время месячных не существует. Но следует учесть, что:</p>
-              <ul>
-                <li>⋆ в критические дни повышается чувствительность в таких деликатных местах, как подмышки и бикини.</li>
-                <li>⋆ если «эти» дни у вас сопровождаются резкими болями и ухудшением самочувствия, то процедуру лучше перенести на другой день.</li>
-                <li>⋆ если у вас хорошая переносимость КД (месячных), то отменять процедуру не обязательно, просто позаботьтесь о гигиене (используйте тампон вместо прокладок).</li>
-              </ul>
-            </div>
-          </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">Безопасна ли лазерная эпиляция в области бикини?</button>
+              <div class="faq__content collapse" id="collapseSix">
+                <p>Эпиляция в зоне бикини с помощью лазера абсолютно безопасна для женского организма.</p>
+                <p>Лучи лазера с длиной 808 НМ не могут спровоцировать (если у вас нет противопоказаний) какие-либо осложнения в женском организме, так как луч достигает только до фолликул.</p>
+              </div>
+            </li>
 
-          <li class="faq__item">
-            <button type="button">Безопасна ли лазерная эпиляция в области бикини?</button>
-            <div>
-              <p>Эпиляция в зоне бикини с помощью лазера абсолютно безопасна для женского организма.</p>
-              <p>Лучи лазера с длиной 808 НМ не могут спровоцировать (если у вас нет противопоказаний) какие-либо осложнения в женском организме, так как луч достигает только до фолликул.</p>
-            </div>
-          </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">Зачем обматывать манипулу одноразовой плёнкой?</button>
+              <div class="faq__content collapse" id="collapseSeven">
+                <p>Возможно вы замечали, что после каждого пациента, наш специалисты оборачивают манипулу одноразовой пленкой. Зачем?</p>
+                <ul>
+                  <li>⋆ Одноразовая пленка во время процедуры лазерной эпиляции создает дополнительный гигиенический барьер, создавая пациенту дополнительную защиту.</li>⠀⠀
+                  <li>⋆ Дезинфекция проводится спиртосодержащими профессиональными антисептиками, используемыми в медицине.</li>
+                  <li>⋆ Так же хотим отметить, на будущий результат от процедур это никак не влияет. Пленка не препятствует воздействию луча в ткани.</li>
+                </ul>
+                <p>
+                  Цель одноразовой пленки - гигиена. Записываясь к нам на процедуры,будьте уверены в нашей стерильности и в своей безопасности.
+                </p>
+              </div>
+            </li>
 
-          <li class="faq__item">
-            <button type="button">Зачем обматывать манипулу одноразовой плёнкой?</button>
-            <div>
-              <p>Возможно вы замечали, что после каждого пациента, наш специалисты оборачивают манипулу одноразовой пленкой. Зачем?</p>
-              <ul>
-                <li>⋆ Одноразовая пленка во время процедуры лазерной эпиляции создает дополнительный гигиенический барьер, создавая пациенту дополнительную защиту.</li>⠀⠀
-                <li>⋆ Дезинфекция проводится спиртосодержащими профессиональными антисептиками, используемыми в медицине.</li>
-                <li>⋆ Так же хотим отметить, на будущий результат от процедур это никак не влияет. Пленка не препятствует воздействию луча в ткани.</li>
-              </ul>
-              <p>
-                Цель одноразовой пленки - гигиена. Записываясь к нам на процедуры,будьте уверены в нашей стерильности и в своей безопасности.
-              </p>
-            </div>
-          </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight">Как удалять волосы во время курса эпиляции?</button>
+              <div class="faq__content collapse" id="collapseEight">
+                <p>Во время курса лазерной эпиляции волоски удаляются только</p>
+                <ul>
+                  <li>Бритвой</li>
+                  <li>Тримером (для лица)</li>
+                </ul>
+                <p>Волосяной фолликул поглотил энергию лазера и уже поврежден. Для кожи волосок становится инородным предметом, от которого в течение 15 дней после процедуры наш организм естественным образом избавится. Кожа "вытолкнет" поврежденный волос.</p>
+                <p>Нельзя</p>
+                <ul>
+                  <li>выдергивать волоски пинцетом или пальцами</li>
+                  <li>пользоваться эппилятором, кремами для депиляции</li>
+                </ul>
+                <p>Так как при этом прерывается естественный процесс, и фолликул механически травмируется. Это может привести к тому, что волос возобновит свой рост.Бритва убирает только выступающую часть волоска и не мешает "процессу избавления".</p>
+              </div>
+            </li>
 
-          <li class="faq__item">
-            <button type="button">Как удалять волосы во время курса эпиляции?</button>
-            <div>
-              <p>Во время курса лазерной эпиляции волоски удаляются только</p>
-              <ul>
-                <li>Бритвой</li>
-                <li>Тримером (для лица)</li>
-              </ul>
-              <p>Волосяной фолликул поглотил энергию лазера и уже поврежден. Для кожи волосок становится инородным предметом, от которого в течение 15 дней после процедуры наш организм естественным образом избавится. Кожа "вытолкнет" поврежденный волос.</p>
-              <p>Нельзя</p>
-              <ul>
-                <li>выдергивать волоски пинцетом или пальцами</li>
-                <li>пользоваться эппилятором, кремами для депиляции</li>
-              </ul>
-              <p>Так как при этом прерывается естественный процесс, и фолликул механически травмируется. Это может привести к тому, что волос возобновит свой рост.Бритва убирает только выступающую часть волоска и не мешает "процессу избавления".</p>
-            </div>
-          </li>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine">Что делать, если я иду впервые и очень стесняюсь?</button>
+              <div class="faq__content collapse" id="collapseNine">
+                <p>Не переживай, стеснение пройдёт сразу после первой процедуры️ вы будете себя спрашивать: «Почему я не сделала этого раньше?».</p>
+                <p>Как подготовиться?</p>
+                <ul>
+                  <li>за день накануне необходимо ПОБРИТЬ зоны, где будем проводить лазерную эпиляцию</li>
+                  <li>за 2-3 дня исключаемся нанесение спиртосодержащей косметики на обрабатываемые зоны</li>
+                  <li>солнечные ванны и солярий- до/после процедуры должно пройти 10 дней</li>
+                </ul>
+                <p>Помни: чем светлее кожа и темнее волос, тем быстрее и лучше наступит результат от процедур.</p>
+                <p>Обязательно ознакомься с противопоказаниями</p>
+              </div>
+            </li>
 
-          <li class="faq__item">
-            <button type="button">Что делать, если я иду впервые и очень стесняюсь?</button>
-            <div>
-              <p>Не переживай, стеснение пройдёт сразу после первой процедуры️ вы будете себя спрашивать: «Почему я не сделала этого раньше?».</p>
-              <p>Как подготовиться?</p>
-              <ul>
-                <li>за день накануне необходимо ПОБРИТЬ зоны, где будем проводить лазерную эпиляцию</li>
-                <li>за 2-3 дня исключаемся нанесение спиртосодержащей косметики на обрабатываемые зоны</li>
-                <li>солнечные ванны и солярий- до/после процедуры должно пройти 10 дней</li>
-              </ul>
-              <p>Помни: чем светлее кожа и темнее волос, тем быстрее и лучше наступит результат от процедур.</p>
-              <p>Обязательно ознакомься с противопоказаниями</p>
-            </div>
-          </li>
-
-          <li class="faq__item">
-            <button type="button">Делаете ли вы мужскую эпиляцию?</button>
-            <div>
-              <p>Ещё как делаем. Бритье у мужчин сопряжено с большими рисками, чем у женщин. Прежде всего - из-за особенностей волос и кожи. Мужская кожа более плотная, а волосяной стержень - более жесткий.</p>
-              <p>В итоге после того, как сбритый волос начинает отрастать заново, ему сложнее пробиться через ороговевший слой кожи. И он начинает расти вниз, провоцируя врастание, воспаления, травматическую пигментацию кожи и другие неприятные последствия.</p>
-              <p>- Делают ли мужчины лазерную эпиляцию бикини?</p>
-              <p>- Естественно!</p>
-              <p>Лазерная эпиляция в паховой области у мужчин особенно востребована - как в целях гигиены, так и ради эстетики и комфорта. Волосяной покров в этой зоне густой и жесткий, и потому его удаление в этой зоне - особенно деликатный процесс</p>
-            </div>
-          </li>
-        </ul>
+            <li class="faq__item">
+              <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen">Делаете ли вы мужскую эпиляцию?</button>
+              <div class="faq__content collapse" id="collapseTen">
+                <p>Ещё как делаем. Бритье у мужчин сопряжено с большими рисками, чем у женщин. Прежде всего - из-за особенностей волос и кожи. Мужская кожа более плотная, а волосяной стержень - более жесткий.</p>
+                <p>В итоге после того, как сбритый волос начинает отрастать заново, ему сложнее пробиться через ороговевший слой кожи. И он начинает расти вниз, провоцируя врастание, воспаления, травматическую пигментацию кожи и другие неприятные последствия.</p>
+                <p>- Делают ли мужчины лазерную эпиляцию бикини?</p>
+                <p>- Естественно!</p>
+                <p>Лазерная эпиляция в паховой области у мужчин особенно востребована - как в целях гигиены, так и ради эстетики и комфорта. Волосяной покров в этой зоне густой и жесткий, и потому его удаление в этой зоне - особенно деликатный процесс</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="photos" id="photos">
-        <h2>Фото</h2>
-        <ul class="photos__list">
-          <li>
-            <img src="#" width="520" height="700" alt="photo">
-          </li>
-          <li>
-            <img src="#" width="520" height="700" alt="photo">
-          </li>
-        </ul>
-        <ul class="pagination">
-          <li class="current"><span class="visually-hidden">1</span></li>
-          <li><span class="visually-hidden">2</span></li>
-          <li><span class="visually-hidden">3</span></li>
-          <li><span class="visually-hidden">4</span></li>
-        </ul>
+        <div class="photos__wrapper">
+          <h2>Фото</h2>
+          <div class="slider">
+            <ul>
+              <li class="slider-item slider-item--current">
+                <img src="img/photo1.jpg" width="520" height="700" alt="photo">
+              </li>
+              <li class="slider-item">
+                <img src="img/photo2.jpg" width="520" height="700" alt="photo">
+              </li>
+              <!-- <li class="slider-item">
+                <img src="img/photo3.jpg" width="520" height="700" alt="photo">
+              </li>
+              <li class="slider-item">
+                <img src="img/photo4.jpg" width="520" height="700" alt="photo">
+              </li> -->
+            </ul>
+
+            <ul class="slider__controls">
+              <li class="slider__control current"><a><span class="visually-hidden">1 \ 4</span></a></li>
+              <li class="slider__control"><a><span class="visually-hidden">2 \ 4</span></a></li>
+              <li class="slider__control"><a><span class="visually-hidden">3 \ 4</span></a></li>
+              <li class="slider__control"><a><span class="visually-hidden">4 \ 4</span></a></li>
+            </ul>
+
+          </div>
+
+        </div>
       </section>
 
       <section class="feedback">
-        <form action="#" method="POST">
-          <h2>Перезвоните мне</h2>
-          <input type="text" id="name" placeholder="Имя">
-          <label class="visually-hidden" for="name"></label>
-          <input type="text" id="phone" placeholder="Телефон">
-          <label class="visually-hidden" for="phone"></label>
-          <button type="submit">Отправить</button>
-        </form>
-        <div class="feedback__success">
-          <p>Спасибо!</p>
-          <p>Очень скоро мы вам перезвоним</p>
-          <button>Отправить ещё раз</button>
+        <div class="feedback__wrapper">
+          <form class="feedback__form" action="#" method="POST">
+            <h2>Перезвоните мне</h2>
+            <div class="feedback__controls">
+              <input type="text" id="name" placeholder="Имя">
+              <label class="visually-hidden" for="name"></label>
+              <input type="text" id="phone" placeholder="Телефон">
+              <label class="visually-hidden" for="phone"></label>
+            </div>
+            <button class="button" type="submit">Отправить</button>
+          </form>
+          <div class="feedback__success">
+            <p>Спасибо!</p>
+            <p>Очень скоро мы вам перезвоним</p>
+            <button class="button">Отправить ещё раз</button>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="page-footer">
-      <ul class="page-footer__nav-list">
-        <li class="page-footer__nav-item">
-          <a class="page-footer__nav-link" href="#about">О нас</a>
-        </li>
-        <li class="page-footer__nav-item">
-          <a class="page-footer__nav-link" href="#prices">Цены</a>
-        </li>
-        <li class="page-footer__nav-item">
-          <a class="page-footer__nav-link" href="#reviews">Отзывы</a>
-        </li>
-        <li class="page-footer__nav-item">
-          <a class="page-footer__nav-link" href="#faq">Вопросы</a>
-        </li>
-        <li class="page-footer__nav-item">
-          <a class="page-footer__nav-link" href="#photos">Фото</a>
-        </li>
-      </ul>
+      <div class="page-footer__wrapper">
+        <ul class="page-footer__nav-list">
+          <li class="page-footer__nav-item">
+            <a class="page-footer__nav-link" href="#about">О нас</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="page-footer__nav-link" href="#prices">Цены</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="page-footer__nav-link" href="#reviews">Отзывы</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="page-footer__nav-link" href="#faq">Вопросы</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="page-footer__nav-link" href="#photos">Фото</a>
+          </li>
+        </ul>
 
-      <ul class="page-footer__social-list">
-        <li class="page-footer__social-item">
-          <a class="page-footer__social-link">
-            instagram
-          </a>
-        </li>
-        <li class="page-footer__social-item">
-          <a class="page-footer__social-link">
-            vk
-          </a>
-        </li>
-      </ul>
-      <a class="page-footer__logo" href="page-header">
-        <img class="page-footer__logo-image" src="#" width="58" height="60" alt="Логотип">
-      </a>
-      <ul class="page-footer__contacts-list">
-        <li class="page-footer__contacts-item">
-          <address>
-            Социалистическая улица, 21, 2 этаж
-          </address>
-        </li>
-        <li class="page-footer__contacts-item">
-          <a href="tel:+79851144282">
-            +7 985 114 42 82
-          </a>
-        </li>
-      </ul>
+        <ul class="page-footer__social-list">
+          <li class="page-footer__social-item">
+            <a class="page-footer__social-link">
+              instagram
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a class="page-footer__social-link">
+              vk
+            </a>
+          </li>
+        </ul>
+        <a class="page-footer__logo" href="page-header">
+          <img class="page-footer__logo-image" src="img/logo.svg" width="96" height="100" alt="Логотип">
+        </a>
+        <div class="page-footer__box">
+
+          <ul class="page-footer__contacts-list">
+            <li>
+              <address>
+                Социалистическая улица, 21, 2 этаж
+              </address>
+            </li>
+            <li>
+              <a href="tel:+79851144282">
+                +7 985 114 42 82
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
-
+    <script src="js/bootstrap.js"></script>
+    <script src="js/tabs.js"></script>
   </body>
 </html>

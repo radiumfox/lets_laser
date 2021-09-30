@@ -1,0 +1,126 @@
+.feedback__form {
+  border: 1px solid $basic-dark;
+  max-width: 780px;
+  padding: 50px 70px 74px;
+  box-sizing: border-box;
+  margin-left: auto;
+
+  @media(max-width: $mobile-width-only) {
+    padding: 31px 31px 39px;
+  }
+}
+
+.feedback__wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  padding: 0 10px;
+
+  @media(max-width: $mobile-width-only) {
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }
+}
+
+.feedback__controls {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  @media(max-width: $mobile-width-only) {
+    margin-bottom: 27px;
+  }
+}
+
+.feedback h2 {
+  @include font(36px, 54px, 300);
+  text-transform: lowercase;
+  margin-bottom: 8px;
+  margin-top: 0;
+
+  @media(max-width: $mobile-width-only) {
+    @include font(18px, 27px, 300);
+  }
+}
+
+.feedback button {
+  min-width: 213px;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba($basic-dark, 0.7);
+    border-color: rgba($basic-dark, 0.7);
+  }
+
+  @media(max-width: $mobile-width-only) {
+    @include font(10px, 16px, 600);
+    min-width: 92px;
+    width: 92px;
+    padding: 8px 12px;
+  }
+}
+
+.feedback__success {
+  display: none;
+  border: 1px solid $basic-dark;
+  padding: 50px 70px;
+  box-sizing: border-box;
+  max-width: 780px;
+  margin-left: auto;
+  min-height: 400px;
+
+  @media(max-width: $tablet-width-only) {
+    min-height: auto;
+  }
+
+  @media(max-width: $mobile-width-only) {
+    padding: 31px;
+  }
+}
+
+.feedback__success p {
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.feedback__success p:first-child {
+  @include font(36px, 54px, 300);
+  margin: 0;
+  padding-bottom: 20px;
+  text-transform: lowercase;
+
+  @media(max-width: $mobile-width-only) {
+    @include font(18px, 27px, 300);
+  }
+}
+
+.feedback__success .button {
+  @include font(14px, 21px, 600);
+  width: 223px;
+
+  @media(max-width: $mobile-width-only) {
+    @include font(10px, 16px, 600);
+    padding: 8px 0;
+  }
+}
+
+.feedback input {
+  @include placeholder;
+  border: none;
+  border-bottom: 1px solid $basic-dark;
+  padding: 10px 0;
+  margin-bottom: 26px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media(max-width: $mobile-width-only) {
+    margin-bottom: 8px;
+    padding: 8px 0;
+  }
+}

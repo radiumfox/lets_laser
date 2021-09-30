@@ -1,0 +1,27 @@
+@mixin placeholder {
+  &::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba($basic-dark, 0.3);
+    text-transform: lowercase;
+    font-family: "SF UI Display", "Verdana", sans-serif;
+    opacity: 1;
+
+    @media(max-width: $mobile-width-only) {
+      font-size: 10px;
+      line-height: 15px;
+    }
+  }
+}
+
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin font($font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}

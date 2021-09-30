@@ -1,0 +1,16 @@
+
+.star {
+  background-image: url("../img/star.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: top;
+  margin-top: 4px;
+
+  @media(max-width: $tablet-width-only) {
+    width: 4px;
+    height: 4px;
+  }
+}

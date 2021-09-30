@@ -1,0 +1,33 @@
+.page-header address {
+  @include font(12px, 18px, 400);
+  color: $basic-light;
+  font-style: normal;
+
+  @media(max-width: $mobile-width-only) {
+    @include font(7px, 10px, 400);
+    padding-left: 8px;
+  }
+}
+
+.page-header__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 45px 10px 0;
+
+  @media(max-width: $mobile-width-only) {
+    padding: 20px 10px 0;
+  }
+}
+
+.page-header__logo img {
+  margin-right: 50px;
+
+  @media(max-width: $mobile-width-only) {
+    width: 22px;
+    height: 23px;
+    margin-right: 0;
+  }
+}
