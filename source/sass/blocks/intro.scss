@@ -66,7 +66,7 @@
 
   h1 {
     @include font(144px, 200px, 600);
-    font-family: "Optimo Plain", "Helvetica", sans-serif;
+    font-family: "Plain", "Helvetica", sans-serif;
     color: $basic-light;
     margin: 0;
     text-transform: uppercase;
@@ -83,7 +83,7 @@
     @include font(18px, 27px, 400);
     text-transform: lowercase;
     color: $basic-light;
-    margin: 0 0 0 80px;
+    margin: 0 0 0 120px;
 
     @media(max-width: $mobile-width-only) {
       @include font(10px, 15px, 400);
@@ -94,7 +94,7 @@
 }
 
 .intro__text {
-  max-width: 860px;
+  max-width: 900px;
   margin-left: auto;
 
   @media(max-width: $mobile-width-only) {
@@ -151,11 +151,11 @@
   background-color: $tertiary-light;
   max-width: 769px;
   width: 100%;
-  padding: 50px;
+  padding: 50px 50px 65px;
   margin-left: auto;
   box-sizing: border-box;
   position: absolute;
-  bottom: -280px;
+  bottom: -290px;
   right: 0;
 
   @media(max-width: $mobile-width-only) {

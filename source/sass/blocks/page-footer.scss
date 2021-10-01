@@ -5,18 +5,15 @@
 .page-footer__wrapper {
   max-width: 1040px;
   margin: 0 auto;
-  // display: flex;
-  // flex-wrap: wrap;
   padding: 85px 10px 70px;
   display: grid;
   grid-template-columns: 24% 24% 50%;
   grid-template-rows: auto auto;
 
   @media(max-width: $mobile-width-only) {
-    // justify-content: space-between;
-    padding: 50px 10px 45px;
+    padding: 45px 10px 40px;
     grid-template-columns: 18.5% 31% 50%;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 2fr;
   }
 }
 
@@ -43,6 +40,11 @@
   color: $basic-light;
   text-decoration: none;
   text-transform: lowercase;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba($basic-light, 0.7);
+  }
 
   @media(max-width: $mobile-width-only) {
     @include font(12px, 18px, 400);
@@ -61,6 +63,7 @@
 }
 
 .page-footer__logo {
+  width:fit-content ;
   @media(max-width: $mobile-width-only) {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -93,6 +96,7 @@
   @media(max-width: $mobile-width-only) {
     margin-bottom: 0;
     margin-left: 20px;
+    margin-top: 10px;
     width: 40px;
     height: 40px;
   }
