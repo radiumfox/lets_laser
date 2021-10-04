@@ -12,13 +12,13 @@
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-semibold.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-regular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-light.woff2" as="font" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="page-body">
     <header class="page-header" id="page-header">
       <div class="page-header__wrapper">
         <a class="page-header__logo">
-          <img class="page-header__logo-image" src="img/logo.svg" width="58" height="60" alt="Логотип">
+          <img class="page-header__logo-image" src="assets/logo.svg" width="58" height="60" alt="Логотип">
         </a>
         <address class="page-header__address">СПб<br> Социалистическая улица, 21, 2 этаж</address>
         <nav class="main-nav main-nav--closed main-nav--nojs">
@@ -27,19 +27,19 @@
           </button>
           <ul class="main-nav__list collapse navbar-collapse" id="navbarSupportedContent">
             <li class="main-nav__item">
-              <a href="#about">О нас</a>
+              <a data-id="about">О нас</a>
             </li>
             <li class="main-nav__item">
-              <a href="#prices">Цены</a>
+              <a data-id="prices">Цены</a>
             </li>
             <li class="main-nav__item">
-              <a href="#reviews">Отзывы</a>
+              <a data-id="reviews">Отзывы</a>
             </li>
             <li class="main-nav__item">
-              <a href="#faq">Вопросы</a>
+              <a data-id="faq">Вопросы</a>
             </li>
             <li class="main-nav__item">
-              <a href="#photos">Фото</a>
+              <a data-id="photos">Фото</a>
             </li>
           </ul>
         </nav>
@@ -49,7 +49,7 @@
     <main class="page-main">
       <section class="intro">
         <video class="intro__movie" autoplay muted loop>
-          <source src="img/pexels-koolshooters-8955991.mp4" type="video/mp4">
+          <source src="assets/pexels-koolshooters-8955991.mp4" type="video/mp4">
         </video>
         <div class="intro__wrapper" id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
           <div class="intro__title carousel-item active">
@@ -58,14 +58,32 @@
               <p>Студия лазерной эпиляции</p>
             </div>
           </div>
-          <div class="intro__box carousel-item">
-            <p class="intro__discount">Скидка 50% на&nbsp;первое посещение</p>
-          </div>
+
           <div class="intro__button-box">
             <div>
               <a class="button" href="#">Записаться онлайн</a>
             </div>
           </div>
+
+          <div class="intro__box carousel-item">
+            <p class="intro__discount">Скидка 50% на&nbsp;первое посещение</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="modal-feedback feedback" id="modal-window">
+        <div class="feedback__wrapper modal-feedback__wrapper">
+          <form class="feedback__form" action="#" method="POST">
+            <h2>Перезвоните мне</h2>
+            <div class="feedback__controls">
+              <input type="text" id="feedback-name" placeholder="Имя">
+              <label class="visually-hidden" for="feedback-name"></label>
+              <input type="number" id="feedback-phone" placeholder="Телефон" required>
+              <label class="visually-hidden" for="feedback-phone"></label>
+            </div>
+            <button class="button" type="submit">Отправить</button>
+            <button class="button-close" id="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+          </form>
         </div>
       </section>
 
@@ -83,7 +101,7 @@
           </div>
           <div class="about__movie-box">
             <video class="about__movie" autoplay muted loop>
-              <source src="img/pexels-karolina-grabowska-8371229.mp4" type="video/mp4">
+              <source src="assets/pexels-karolina-grabowska-8371229.mp4" type="video/mp4">
             </video>
             <button type="button">
               <span class="visually-hidden">Чат</span>
@@ -284,126 +302,37 @@
       <section class="reviews" id="reviews">
         <h2>Отзывы</h2>
         <div class="reviews__wrapper">
-          <div class="slider">
-            <ul class="reviews__list slider__list">
-              <li class="reviews__item slider__item current">
-                <img src="img/review-desk.jpg" width="351" height="166">
-                <!-- <blockquote class="reviews__content">
-                  <div class="reviews__author">
-                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
-                    <cite>
-                      Галина Таранова <span>41 отзыв</span>
-                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
-                    </cite>
-                    <div class="stars">
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                    </div>
+          <div class="wrap slider">
+            <div class="reviews__carousel glide">
+              <div class=" glide__track" data-glide-el="track">
+                <ul class="reviews__list slider__list glide__slides">
+                  <li class="reviews__item slider__item current glide__slide">
+                    <img src="assets/review-desk.jpg" width="351" height="166">
+                  </li>
+                  <li class="reviews__item slider__item glide__slide">
+                    <img src="assets/review-desk.jpg" width="351" height="166">
+                  </li>
+                  <li class="reviews__item slider__item glide__slide">
+                    <img src="assets/review-desk.jpg" width="351" height="166">
+                  </li>
+                  <li class="reviews__item slider__item glide__slide">
+                    <img src="assets/review-desk.jpg" width="351" height="166">
+                  </li>
+                </ul>
+                <div class="reviews__bullets-wrapper">
+                  <div class="glide__bullets bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet bullet" data-glide-dir="=0"><span class="bullet__text">1<span>\ 4</span></span></button>
+                    <button class="glide__bullet bullet" data-glide-dir="=1"><span class="bullet__text">2<span>\ 4</span></span></button>
+                    <button class="glide__bullet bullet" data-glide-dir="=2"><span class="bullet__text">3<span>\ 4</span></span></button>
+                    <button class="glide__bullet bullet" data-glide-dir="=3"><span class="bullet__text">4<span>\ 4</span></span></button>
                   </div>
-                  <p class="reviews__text">
-                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
-                  </p>
-                  <div class="reviews__rate">
-                    <span class="reviews__thumb"></span>
-                    <span>Полезно </span>
-                    <span>0</span>
-                  </div>
-                </blockquote> -->
-              </li>
-              <li class="reviews__item slider__item">
-                <img src="img/review-desk.jpg" width="351" height="166">
-                <!-- <blockquote class="reviews__content">
-                  <div class="reviews__author">
-                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
-                    <cite>
-                      Галина Таранова <span>41 отзыв</span>
-                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
-                    </cite>
-                    <div class="stars">
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                    </div>
-                  </div>
-                  <p class="reviews__text">
-                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
-                  </p>
-                  <div class="reviews__rate">
-                    <span class="reviews__thumb"></span>
-                    <span>Полезно </span>
-                    <span>0</span>
-                  </div>
-                </blockquote> -->
-              </li>
-              <li class="reviews__item slider__item">
-                <img src="img/review-desk.jpg" width="351" height="166">
-                <!-- <blockquote class="reviews__content">
-                  <div class="reviews__author">
-                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
-                    <cite>
-                      Галина Таранова <span>41 отзыв</span>
-                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
-                    </cite>
-                    <div class="stars">
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                    </div>
-                  </div>
-                  <p class="reviews__text">
-                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
-                  </p>
-                  <div class="reviews__rate">
-                    <span class="reviews__thumb"></span>
-                    <span>Полезно </span>
-                    <span>0</span>
-                  </div>
-                </blockquote> -->
-              </li>
-              <li class="reviews__item slider__item">
-                <img src="img/review-desk.jpg" width="351" height="166">
-                <!-- <blockquote class="reviews__content">
-                  <div class="reviews__author">
-                    <img class="review__author-img" src="img/comment-author.svg" width="28" height="28" alt="Аватар автора">
-                    <cite>
-                      Галина Таранова <span>41 отзыв</span>
-                      <p class="reviews__date">13 сентября 2021, отредактирован</p>
-                    </cite>
-                    <div class="stars">
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                      <span class="star"></span>
-                    </div>
-                  </div>
-                  <p class="reviews__text">
-                    Ставлю "LET'S LASER" заслуженные 5 звезд, первое посещение прошло без нареканий, не разочаровалась в профессионализме мастера и прайсе на услуги!
-                  </p>
-                  <div class="reviews__rate">
-                    <span class="reviews__thumb"></span>
-                    <span>Полезно </span>
-                    <span>0</span>
-                  </div>
-                </blockquote> -->
-              </li>
-            </ul>
-            <ul class="slider__controls tabs">
-              <li class="slider__control current"><a>1<span>\ 4</span></a></li>
-              <li class="slider__control"><a>2<span>\ 4</span></a></li>
-              <li class="slider__control"><a>3<span>\ 4</span></a></li>
-              <li class="slider__control"><a>4<span>\ 4</span></a></li>
-            </ul>
+                </div>
+              </div>
+            </div>
           </div>
+
           <video class="reviews__movie" autoplay muted loop>
-            <source src="img/pexels-anna-nekrashevich-8516672.mp4" type="video/mp4">
+            <source src="assets/pexels-anna-nekrashevich-8516672.mp4" type="video/mp4">
           </video>
         </div>
       </section>
@@ -496,7 +425,7 @@
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">Можно ли делать эпиляцию в критические дни?</button>
               <div class="faq__content collapse" id="collapseFive">
                 <p>Специалисты в LET’S LASER считают, что прямого запрета на проведение Лазерной эпиляции во время месячных не существует. Но следует учесть, что:</p>
-                <ul>
+                <ul class="unstyled">
                   <li>⋆ в критические дни повышается чувствительность в таких деликатных местах, как подмышки и бикини.</li>
                   <li>⋆ если «эти» дни у вас сопровождаются резкими болями и ухудшением самочувствия, то процедуру лучше перенести на другой день.</li>
                   <li>⋆ если у вас хорошая переносимость КД (месячных), то отменять процедуру не обязательно, просто позаботьтесь о гигиене (используйте тампон вместо прокладок).</li>
@@ -516,7 +445,7 @@
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">Зачем обматывать манипулу одноразовой плёнкой?</button>
               <div class="faq__content collapse" id="collapseSeven">
                 <p>Возможно вы замечали, что после каждого пациента, наш специалисты оборачивают манипулу одноразовой пленкой. Зачем?</p>
-                <ul>
+                <ul class="unstyled">
                   <li>⋆ Одноразовая пленка во время процедуры лазерной эпиляции создает дополнительный гигиенический барьер, создавая пациенту дополнительную защиту.</li>⠀⠀
                   <li>⋆ Дезинфекция проводится спиртосодержащими профессиональными антисептиками, используемыми в медицине.</li>
                   <li>⋆ Так же хотим отметить, на будущий результат от процедур это никак не влияет. Пленка не препятствует воздействию луча в ткани.</li>
@@ -575,53 +504,61 @@
       </section>
 
       <section class="photos" id="photos">
+        <h2>Фото</h2>
         <div class="photos__wrapper">
-          <h2>Фото</h2>
-          <div class="slider">
-            <ul>
-              <li class="slider-item slider-item--current">
-                <img src="img/photo1.jpg" width="520" height="700" alt="photo">
-              </li>
-              <li class="slider-item">
-                <img src="img/photo2.jpg" width="520" height="700" alt="photo">
-              </li>
-              <!-- <li class="slider-item">
-                <img src="img/photo3.jpg" width="520" height="700" alt="photo">
-              </li>
-              <li class="slider-item">
-                <img src="img/photo4.jpg" width="520" height="700" alt="photo">
-              </li> -->
-            </ul>
 
-            <ul class="slider__controls">
-              <li class="slider__control current"><a><span class="visually-hidden">1 \ 4</span></a></li>
-              <li class="slider__control"><a><span class="visually-hidden">2 \ 4</span></a></li>
-              <li class="slider__control"><a><span class="visually-hidden">3 \ 4</span></a></li>
-              <li class="slider__control"><a><span class="visually-hidden">4 \ 4</span></a></li>
-            </ul>
-
+          <div class="wrap">
+            <div class="glide photos__carousel">
+              <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                  <li class="glide__slide photos__slide">
+                    <img src="assets/photo1.jpg" width="520" height="700" alt="photo">
+                  </li>
+                  <li class="glide__slide photos__slide">
+                    <img src="assets/photo2.jpg" width="520" height="700" alt="photo">
+                  </li>
+                  <li class="glide__slide photos__slide">
+                    <img src="assets/photo3.jpg" width="520" height="700" alt="photo">
+                  </li>
+                  <li class="glide__slide photos__slide">
+                    <img src="assets/photo4.jpg" width="520" height="700" alt="photo">
+                  </li>
+                </ul>
+                <div class="photos__bullets-wrapper">
+                  <div class="glide__bullets bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet bullet" data-glide-dir="=2"></button>
+                    <button class="glide__bullet bullet" data-glide-dir="=3"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
       </section>
 
-      <section class="feedback">
+      <section class="feedback" id="feedback">
         <div class="feedback__wrapper">
           <form class="feedback__form" action="#" method="POST">
             <h2>Перезвоните мне</h2>
             <div class="feedback__controls">
               <input type="text" id="name" placeholder="Имя">
               <label class="visually-hidden" for="name"></label>
-              <input type="text" id="phone" placeholder="Телефон">
-              <label class="visually-hidden" for="phone"></label>
+              <input type="number" id="feedback-phone" placeholder="Телефон" required>
+              <label class="visually-hidden" for="feedback-phone"></label>
             </div>
             <button class="button" type="submit">Отправить</button>
           </form>
-          <div class="feedback__success">
-            <p>Спасибо!</p>
-            <p>Очень скоро мы вам перезвоним</p>
-            <button class="button">Отправить ещё раз</button>
-          </div>
+          <template id="success">
+            <div class="feedback__success">
+              <p>Спасибо!</p>
+              <p>Очень скоро мы вам перезвоним</p>
+              <button class="feedback__success-button button" type="button">Отправить ещё раз</button>
+              <button class="button-close" id="success-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+            </div>
+          </template>
         </div>
       </section>
     </main>
@@ -652,14 +589,14 @@
               instagram
             </a>
           </li>
-          <li class="page-footer__social-item">
+          <li class="page-footer__social-item page-footer__social-item--vk">
             <a class="page-footer__social-link">
               vk
             </a>
           </li>
         </ul>
         <a class="page-footer__logo" href="page-header">
-          <img class="page-footer__logo-image" src="img/logo.svg" width="96" height="100" alt="Логотип">
+          <img class="page-footer__logo-image" src="assets/logo.svg" width="96" height="100" alt="Логотип">
         </a>
         <div class="page-footer__box">
 
@@ -670,7 +607,7 @@
               </address>
             </li>
             <li>
-              <a href="tel:+79851144282">
+              <a class="page-footer__phone" href="tel:+79851144282">
                 +7 985 114 42 82
               </a>
             </li>
@@ -678,7 +615,7 @@
         </div>
       </div>
     </footer>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/tabs.js"></script>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

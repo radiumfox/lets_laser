@@ -9,6 +9,10 @@
   background-color: transparent;
   display: inline-block;
 
+  &:hover {
+    background-color: $secondary-light;
+  }
+
   @media(max-width: $mobile-width-only) {
     padding: 12px 20px;
   }
