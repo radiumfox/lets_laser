@@ -30,7 +30,7 @@
   padding: 0 0 0 10px;
 
   @media(max-width: $mobile-width-only) {
-    margin-top: 55px;
+    margin-top: 50px;
     margin-bottom: 51px;
   }
 }
@@ -70,6 +70,7 @@
   width: 500px;
   height: 948px;
   object-fit: cover;
+  background-color: $secondary-light;
 
   @media(max-width: $tablet-width-only) {
     min-width: 170px;
@@ -91,25 +92,17 @@
   position: absolute;
   bottom: 74px;
   right: 50px;
-  background-color: none;
-  background-image: url("../assets/chat-icon.png");
+  background-color: $basic-light;
+  background-image: url("../assets/chat-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100px;
   height: 100px;
-  border: none;
+  border: 1px solid $basic-dark;
   cursor: pointer;
 
-  &:hover::before {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: rgba($basic-dark, 0.1);
-    top: 0;
-    left: 0;
-  }
-
-  &:active::before {
-    background-color: rgba($basic-dark, 0.2);
+  &:hover {
+    background-color: $secondary-light-hover;
   }
 
   @media(max-width: $tablet-width-only) {

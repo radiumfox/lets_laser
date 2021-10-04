@@ -11,6 +11,8 @@ const webp = require("gulp-webp");
 const del = require("del");
 const sync = require("browser-sync").create();
 const sass = require("gulp-sass");
+const concat = require("gulp-concat");
+const terser = require("gulp-terser")
 
 // Styles
 
@@ -40,6 +42,21 @@ const html = () => {
 }
 
 exports.html = html;
+
+// Scripts
+
+const scripts = () => {
+  return gulp.src("source/js/*.js")
+    .pipe(plumber())
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("build/js/"))
+    .pipe(terser())
+    .pipe(concat("main.min.js"))
+    .pipe(gulp.dest("build/js/"))
+    .pipe(sync.stream());
+}
+
+exports.scripts = scripts;
 
 // Images
 
@@ -79,6 +96,7 @@ const copy = (done) => {
     "source/fonts/*.{woff2,woff}",
     "source/assets/**/*.svg",
     "source/js/*.js",
+    "source/assets/*.mp4",
     "!source/assets/*.svg",
   ], {
     base: "source"
@@ -123,6 +141,7 @@ const reload = (done) => {
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series(styles));
   gulp.watch("source/*.html", gulp.series(html, reload));
+  gulp.watch("source/js/*.js", gulp.series(scripts));
 }
 
 // Build
@@ -134,6 +153,7 @@ const build = gulp.series(
   gulp.parallel(
     styles,
     html,
+    scripts,
     createWebp
   ),
 );
@@ -149,6 +169,7 @@ exports.default = gulp.series(
   gulp.parallel(
     styles,
     html,
+    scripts,
     createWebp
   ),
   gulp.series(

@@ -7,6 +7,8 @@
   @include reset-list;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+
 
   @media(max-width: $tablet-width-only) {
     display: block;
@@ -21,17 +23,30 @@
 
 .main-nav a {
   @include font(20px, 30px, 400);
+  position: relative;
   color: $basic-light;
   text-decoration: none;
   text-transform: lowercase;
+  cursor: pointer;
 
   &:hover {
-    color: rgba($basic-light, 0.7);
+    font-weight: 700;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 70%;
+      background-color: $basic-light;
+      bottom: -5px;
+    }
   }
 }
 
 .main-nav__item {
   margin-right: 59px;
+  width: 60px;
+  text-align: center;
 
   &:last-child {
     margin-right: 0;
@@ -64,7 +79,6 @@
   }
 }
 
-
 .main-nav__toggle:not(.collapsed) {
   background-image: none;
   position: relative;
@@ -82,6 +96,13 @@
 
   &::after {
     transform: rotate(-45deg);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      height: 2px;
+    }
   }
 }
 

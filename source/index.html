@@ -12,7 +12,7 @@
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-semibold.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-regular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" type="font/woff2" href="../fonts/SFUIDisplay-light.woff2" as="font" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="page-body">
     <header class="page-header" id="page-header">
@@ -27,19 +27,19 @@
           </button>
           <ul class="main-nav__list collapse navbar-collapse" id="navbarSupportedContent">
             <li class="main-nav__item">
-              <a href="#about">О нас</a>
+              <a data-id="about">О нас</a>
             </li>
             <li class="main-nav__item">
-              <a href="#prices">Цены</a>
+              <a data-id="prices">Цены</a>
             </li>
             <li class="main-nav__item">
-              <a href="#reviews">Отзывы</a>
+              <a data-id="reviews">Отзывы</a>
             </li>
             <li class="main-nav__item">
-              <a href="#faq">Вопросы</a>
+              <a data-id="faq">Вопросы</a>
             </li>
             <li class="main-nav__item">
-              <a href="#photos">Фото</a>
+              <a data-id="photos">Фото</a>
             </li>
           </ul>
         </nav>
@@ -58,14 +58,32 @@
               <p>Студия лазерной эпиляции</p>
             </div>
           </div>
-          <div class="intro__box carousel-item">
-            <p class="intro__discount">Скидка 50% на&nbsp;первое посещение</p>
-          </div>
+
           <div class="intro__button-box">
             <div>
               <a class="button" href="#">Записаться онлайн</a>
             </div>
           </div>
+
+          <div class="intro__box carousel-item">
+            <p class="intro__discount">Скидка 50% на&nbsp;первое посещение</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="modal-feedback feedback" id="modal-window">
+        <div class="feedback__wrapper modal-feedback__wrapper">
+          <form class="feedback__form" action="#" method="POST">
+            <h2>Перезвоните мне</h2>
+            <div class="feedback__controls">
+              <input type="text" id="feedback-name" placeholder="Имя">
+              <label class="visually-hidden" for="feedback-name"></label>
+              <input type="number" id="feedback-phone" placeholder="Телефон" required>
+              <label class="visually-hidden" for="feedback-phone"></label>
+            </div>
+            <button class="button" type="submit">Отправить</button>
+            <button class="button-close" id="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+          </form>
         </div>
       </section>
 
@@ -521,7 +539,7 @@
         </div>
       </section>
 
-      <section class="feedback">
+      <section class="feedback" id="feedback">
         <div class="feedback__wrapper">
           <form class="feedback__form" action="#" method="POST">
             <h2>Перезвоните мне</h2>
@@ -538,6 +556,7 @@
               <p>Спасибо!</p>
               <p>Очень скоро мы вам перезвоним</p>
               <button class="feedback__success-button button" type="button">Отправить ещё раз</button>
+              <button class="button-close" id="success-close" type="button"><span class="visually-hidden">Закрыть</span></button>
             </div>
           </template>
         </div>
@@ -570,7 +589,7 @@
               instagram
             </a>
           </li>
-          <li class="page-footer__social-item">
+          <li class="page-footer__social-item page-footer__social-item--vk">
             <a class="page-footer__social-link">
               vk
             </a>
@@ -588,7 +607,7 @@
               </address>
             </li>
             <li>
-              <a href="tel:+79851144282">
+              <a class="page-footer__phone" href="tel:+79851144282">
                 +7 985 114 42 82
               </a>
             </li>
@@ -597,10 +616,6 @@
       </div>
     </footer>
 
-    <script src="js/bootstrap.js"></script>
-    <script src="js/tabs.js"></script>
-    <script src="js/success-message.js"></script>
-    <script src="js/glide.js"></script>
-    <script src="js/slider.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

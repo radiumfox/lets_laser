@@ -6,8 +6,16 @@
   margin-left: auto;
 
   @media(max-width: $mobile-width-only) {
-    padding: 31px 31px 39px;
+    padding: 31px 31px 43px;
   }
+}
+
+.feedback .button-close {
+  display: none;
+}
+
+.feedback__form--hide {
+  display: none;
 }
 
 .feedback {
@@ -34,7 +42,7 @@
   margin-bottom: 50px;
 
   @media(max-width: $mobile-width-only) {
-    margin-bottom: 27px;
+    margin-bottom: 30px;
   }
 }
 
@@ -46,17 +54,13 @@
 
   @media(max-width: $mobile-width-only) {
     @include font(18px, 27px, 300);
+    margin-bottom: 2px;
   }
 }
 
 .feedback button {
   min-width: 213px;
   cursor: pointer;
-
-  &:hover {
-    color: rgba($basic-dark, 0.7);
-    border-color: rgba($basic-dark, 0.7);
-  }
 
   @media(max-width: $mobile-width-only) {
     @include font(10px, 16px, 600);

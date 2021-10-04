@@ -58,6 +58,7 @@
   width: 735px;
   height: 820px;
   object-fit: cover;
+  background-color: $secondary-light;
 
   @media(max-width: $tablet-width-only) {
     grid-column: 1 / 2;
@@ -92,15 +93,13 @@
   padding: 117px 124px;
   box-sizing: border-box;
   margin-top: 108px;
-
   background-color: $basic-light;
 
   @media(max-width: $tablet-width-only) {
-    padding: 57px 70px;
+    padding: 59px 70px;
     margin-top: 20px;
     max-width: 340px;
   }
-
 }
 
 .reviews__item img {

@@ -46,7 +46,7 @@
   overflow-x: hidden;
 
   @media(max-width: $tablet-width-only) {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
     margin-top: 42px;
   }
 }
@@ -65,6 +65,10 @@
 
 .photos__bullets-wrapper {
   padding: 0 10px;
+}
+
+.photos img {
+  background-color: $secondary-light;
 }
 
 .photos {

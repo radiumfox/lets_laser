@@ -6,7 +6,7 @@
 
   @media(max-width: $mobile-width-only) {
     margin-top: 46px;
-    margin-bottom: 50px;
+    margin-bottom: 48px;
   }
 }
 
@@ -37,7 +37,7 @@
   }
 
   @media(max-width: $mobile-width-only) {
-    padding: 0 10px 20px;
+    padding: 0 10px 26px;
   }
 }
 
@@ -46,6 +46,10 @@
 
   &:first-child {
     margin-left: 0;
+  }
+
+  @media(max-width: $mobile-width-only) {
+    margin-left: 5px;
   }
 }
 
@@ -103,10 +107,14 @@
 
     @media(max-width: $mobile-width-only) {
       @include font(11px, 16px, 600);
-      padding-top: 8px;
+      padding-top: 17px;
       width: 23.92%;
       padding-left: 10px;
       vertical-align: top;
+
+      span {
+        padding-top: 5px;
+      }
     }
   }
 
@@ -130,13 +138,13 @@
     text-align: center;
     box-sizing: border-box;
     width: 23%;
-    min-height: 116px;
-    height: 116px;
+    min-height: 121px;
+    height: 121px;
 
     @media(max-width: $mobile-width-only) {
       @include font(11px, 16px, 600);
       vertical-align: top;
-      padding-top: 14px;
+      padding-top: 17px;
       width: 18.7%;
     }
   }
@@ -155,6 +163,11 @@
 
   @media(max-width: $mobile-width-only) {
     margin: 0 auto;
+
+    td:nth-child(2n) {
+      background-color: rgba($secondary-light, 0.5);
+      width: 16.8%;
+    }
   }
 }
 
@@ -166,6 +179,7 @@
   td {
     min-height: 60px;
     height: 60px;
+    padding-top: 0;
   }
 }
 
@@ -177,6 +191,8 @@
   margin: 0 auto;
 
   @media(max-width: $mobile-width-only) {
-    padding: 10px;
+    padding: 18px 5px 10px;
+    text-align: center;
+    align-items: center;
   }
 }
