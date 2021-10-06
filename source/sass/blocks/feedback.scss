@@ -59,12 +59,12 @@
 }
 
 .feedback button {
-  min-width: 213px;
+  // min-width: 213px;
   cursor: pointer;
 
   @media(max-width: $mobile-width-only) {
     @include font(10px, 16px, 600);
-    min-width: 92px;
+    // min-width: 92px;
     width: 92px;
     padding: 8px 12px;
   }
