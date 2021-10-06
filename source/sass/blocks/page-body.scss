@@ -12,6 +12,7 @@
 
 .page-body--blur {
   position: relative;
+  overflow: hidden;
 
   &::before {
     content: "";

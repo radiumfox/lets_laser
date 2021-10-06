@@ -12,7 +12,8 @@ const del = require("del");
 const sync = require("browser-sync").create();
 const sass = require("gulp-sass");
 const concat = require("gulp-concat");
-const terser = require("gulp-terser")
+const terser = require("gulp-terser");
+const svgSymbols = require('gulp-svg-symbols');
 
 // Styles
 
@@ -57,6 +58,19 @@ const scripts = () => {
 }
 
 exports.scripts = scripts;
+
+// Sprite
+
+const sprite = () => {
+  return gulp.src('source/assets/icons/*.svg')
+      .pipe(svgSymbols({
+        templates: ['default-svg']
+      }))
+      .pipe(rename('sprite.svg'))
+      .pipe(gulp.dest('build/assets/icons'));
+}
+
+exports.sprite = sprite;
 
 // Images
 
@@ -154,6 +168,7 @@ const build = gulp.series(
     styles,
     html,
     scripts,
+    sprite,
     createWebp
   ),
 );

@@ -60,6 +60,7 @@
   text-decoration: none;
   letter-spacing: 0.2em;
   transition: all .15s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     color: rgba($basic-dark, 0.6);
@@ -72,6 +73,7 @@
 
 .pricing__tabs a.current {
   color: $basic-dark;
+  cursor: auto;
 }
 
 .pricing__tabs li:last-child a {
@@ -83,7 +85,7 @@
 .pricing__table {
   font-family: "Optimo Plain", "Helvetica", sans-serif;
   text-align: left;
-  display: none;
+  display: table;
   border-collapse: collapse;
   max-width: 1040px;
   width: 100%;
@@ -171,8 +173,12 @@
   }
 }
 
-.pricing table.current {
-  display: table;
+// .pricing table.current {
+//   display: table;
+// }
+
+.pricing table.hide {
+  display: none;
 }
 
 .pricing .pricing__sessions {
