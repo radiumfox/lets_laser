@@ -1,5 +1,4 @@
 .bullets {
-  margin: 0 auto;
   border: none;
   width: fit-content;
   border-bottom: 1px solid $tertiary-light;
@@ -35,7 +34,7 @@
   border-bottom: 1px solid $basic-dark;
 }
 
-.bullet.current {
+.bullet.active {
   border-bottom: 1px solid $basic-dark;
 }
 
@@ -45,7 +44,7 @@
   position: absolute;
   bottom: 2px;
   left: 0;
-  width: 150px;
+  width: max-content;
   text-align: left;
   color: black;
   display: none;
@@ -56,14 +55,18 @@
 
   @media(max-width: $tablet-width-only) {
     @include font(48px, 72px, 400);
+    left: 10px;
 
     span {
       @include font(20px, 32px, 400);
     }
   }
 
+  @media(max-width: $mobile-width-only) {
+    left: -10px;
+  }
 }
 
-.bullet.glide__bullet--active .bullet__text {
-  display: inline-block;
+.bullet.active .bullet__text {
+  display: inline;
 }

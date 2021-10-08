@@ -1,5 +1,4 @@
 const photosCarousel = document.querySelector('.photos__carousel');
-const reviewsCarousel = document.querySelector('.reviews__carousel');
 
 if(photosCarousel) {
   const glidePhotos = new Glide('.photos__carousel', {
@@ -18,15 +17,4 @@ if(photosCarousel) {
   });
 
   glidePhotos.mount();
-}
-
-if(reviewsCarousel) {
-  const glideReviews = new Glide('.reviews__carousel', {
-    type: 'slider',
-    focusAt: 'center',
-    startAt: 0,
-    perView: 1,
-  });
-
-  glideReviews.mount();
 }

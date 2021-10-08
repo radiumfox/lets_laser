@@ -13,6 +13,10 @@
   }
 }
 
+.photos .bullets {
+  margin: 0 auto;
+}
+
 .photos ul {
   @include reset-list;
   display: flex;

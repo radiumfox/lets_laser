@@ -2,18 +2,18 @@
   @include font(36px, 54px, 300);
   text-transform: lowercase;
   margin: 0;
-  padding-bottom: 152px;
+  padding-bottom: 146px;
 
   @media(max-width: $mobile-width-only) {
     @include font(18px, 27px, 300);
-    padding-bottom: 30px;
+    padding-bottom: 32px;
   }
 }
 
 .about p {
   @include font(16px, 24px, 400);
   margin: 0;
-  padding: 8px 0;
+  padding: 9px 0;
 
   @media(max-width: $mobile-width-only) {
     @include font(10px, 15px, 400);
@@ -30,14 +30,14 @@
   padding: 0 0 0 10px;
 
   @media(max-width: $mobile-width-only) {
-    margin-top: 50px;
+    margin-top: 47px;
     margin-bottom: 51px;
   }
 }
 
 .about__content {
   max-width: 1040px;
-  margin: 0 130px 0 auto;
+  margin: 0 90px 0 auto;
 
   @media(max-width: $tablet-width-only) {
     margin: 0;
@@ -54,30 +54,18 @@
   max-width: 600px;
 }
 
-.about__movie-box {
-  position: relative;
-  height: 948px;
-
-  @media(max-width: $tablet-width-only) {
-    height: 639px;
-    overflow: hidden;
-    min-width: 170px;
-    max-width: 219px;
-  }
-}
-
 .about .about__movie {
-  width: 500px;
+  width: 550px;
   height: 948px;
   object-fit: cover;
   background-color: $secondary-light;
 
   @media(max-width: $tablet-width-only) {
-    min-width: 170px;
-    max-width: 219px;
+    max-width: 350px;
+
     object-fit: cover;
     object-position: left;
-    height: 649px;
+
   }
 
   @media(max-width: $mobile-width-only) {
@@ -107,5 +95,11 @@
 
   @media(max-width: $tablet-width-only) {
     display: none;
+  }
+}
+
+.main-nav__wrap {
+  @media(max-width: $tablet-width-only) {
+    height: 100vh;
   }
 }
