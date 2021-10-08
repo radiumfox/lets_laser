@@ -1,24 +1,9 @@
-// const discountElement = document.querySelector('.intro__box');
-// const introTitle = document.querySelector('.intro__title');
+const introItem = document.querySelector('.intro__title');
+const introItem2 = document.querySelector('.intro__box');
+introItem2.classList.remove('intro__box--nojs');
 
-// if(introTitle) {
-//   const hideDiscountElement = () => {
-//     discountElement.classList.remove('intro__box--show');
-//   }
-
-//   setTimeout(hideDiscountElement, 2000);
-
-
-//   const showDiscountElement = () => {
-//     discountElement.classList.add('intro__box--show');
-//   }
-
-//   introTitle.addEventListener('mouseover', () => {
-//     setTimeout(showDiscountElement, 1000);
-//   });
-
-
-
-
-
-// }
+if (window.innerWidth < 768) {
+  introItem.classList.add('carousel-item');
+  introItem.classList.add('active');
+  introItem2.classList.add('carousel-item');
+}

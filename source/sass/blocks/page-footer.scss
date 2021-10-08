@@ -7,7 +7,7 @@
   margin: 0 auto;
   padding: 85px 10px 70px;
   display: grid;
-  grid-template-columns: 24% 24% 50%;
+  grid-template-columns: 25% 21% 52%;
   grid-template-rows: auto auto;
 
   @media(max-width: $mobile-width-only) {
@@ -42,9 +42,11 @@
   text-transform: lowercase;
   cursor: pointer;
   position: relative;
+  letter-spacing: 0.3px;
 
   &:hover {
     font-weight: 700;
+    letter-spacing: 0;
 
     &::before {
       content: "";
@@ -68,25 +70,27 @@
   font-style: normal;
   position: relative;
   cursor: pointer;
-
   background-image: url("../assets/geo-mark.svg");
-  background-size: 22px 30px;
+  background-size: 24px 32px;
   background-repeat: no-repeat;
+  padding: 3px 0;
 
   padding-left: 40px;
   max-width: 359px;
+  letter-spacing: 0.3px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 80%;
+    background-color: $basic-light;
+    bottom: -5px;
+  }
 
   &:hover {
     font-weight: 700;
-
-    &::before {
-      content: "";
-      position: absolute;
-      height: 1px;
-      width: 80%;
-      background-color: $basic-light;
-      bottom: -5px;
-    }
+    letter-spacing: 0;
   }
 
   @media(max-width: $mobile-width-only) {
@@ -155,8 +159,16 @@ a.page-footer__logo {
   }
 }
 
+.page-footer__logo {
+  margin-left: 40px;
+
+  @media(max-width: $mobile-width-only) {
+    margin-left:0;
+  }
+}
+
 .page-footer__logo-image {
-  margin-bottom: 50px;
+  margin-bottom: 41px;
 
   @media(max-width: $mobile-width-only) {
     margin-bottom: 0;

@@ -2,8 +2,11 @@ const inputPhone = document.querySelector("#feedback-phone");
 const feedbackSection = document.querySelector('#feedback');
 const feedbackForm = document.querySelector(".feedback__form");
 const feedbackWrapper = document.querySelector(".feedback__wrapper");
-if (feedbackSection) {
-  const successMessageTemplate = document.querySelector("#success").content.querySelector(".feedback__success");
+const successMessageTemplate = document.querySelector("#success");
+let successMessageContent;
+
+if (successMessageTemplate) {
+  successMessageContent = successMessageTemplate.content.querySelector(".feedback__success");
   const successButton = document.querySelector(".feedback__success-button");
   let isStorageSupport = true;
   let phoneStorage = "";
@@ -23,7 +26,6 @@ if (feedbackSection) {
 
   const onButtonPress = () => {
     removeMessage();
-    successButton.removeEventListener("click", onButtonPress);
   }
 
   const showSuccessMessage = () => {
@@ -42,9 +44,6 @@ if (feedbackSection) {
     document.querySelector('.feedback__success-button').addEventListener('click', onButtonPress);
   });
 }
-
-
-
 
 const body = document.querySelector('.page-body');
 const introSection = document.querySelector('.intro');
@@ -88,7 +87,6 @@ const onSuccessClosePress = () => {
   removeModalMessage();
   body.classList.remove('page-body--blur');
   modalWindow.classList.remove('modal-feedback--show');
-  modalSuccessClose.removeEventListener("click", onSuccessClosePress);
 }
 
 const showModalSuccessMessage = () => {

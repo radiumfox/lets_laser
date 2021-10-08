@@ -1,7 +1,7 @@
 .pricing__wrapper {
   max-width: 1040px;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 68px;
   margin-bottom: 190px;
 
   @media(max-width: $mobile-width-only) {
@@ -82,6 +82,7 @@
   }
 }
 
+
 .pricing__table {
   font-family: "Optimo Plain", "Helvetica", sans-serif;
   text-align: left;
@@ -100,12 +101,14 @@
   }
 
   th {
-    @include font(36px, 44px, 600);
+    @include font(36px, 34px, 600);
     text-transform: lowercase;
     width: 25%;
     min-height: 120px;
     box-sizing: border-box;
     padding-left: 50px;
+    padding-top: 35px;
+    padding-bottom: 30px;
 
     @media(max-width: $mobile-width-only) {
       @include font(11px, 16px, 600);
@@ -140,8 +143,8 @@
     text-align: center;
     box-sizing: border-box;
     width: 23%;
-    min-height: 121px;
-    height: 121px;
+    // min-height: 121px;
+    // height: 121px;
 
     @media(max-width: $mobile-width-only) {
       @include font(11px, 16px, 600);
@@ -173,19 +176,14 @@
   }
 }
 
-// .pricing table.current {
-//   display: table;
-// }
-
 .pricing table.hide {
   display: none;
 }
 
 .pricing .pricing__sessions {
   td {
-    min-height: 60px;
-    height: 60px;
-    padding-top: 0;
+    padding: 6px 20px 16px;
+    // height: 60px;
   }
 }
 
