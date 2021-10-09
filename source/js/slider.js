@@ -9,7 +9,7 @@ if(photosCarousel) {
     perView: 2,
 
     breakpoints: {
-      400: {
+      1060: {
         perView: 1,
         focusAt: 'center',
       }

@@ -8,43 +8,41 @@
   top: 312px;
   left: calc(50% - 390px);
   z-index: 100;
-
-  @media(max-width: $tablet-width-only) {
-    left: calc(50% - 40vw)
-  }
-
-  @media(max-width: $mobile-width-only) {
-    left: calc(50% - 47.5vw);
-  }
-}
-
-.modal-feedback .feedback__wrapper {
-  margin-bottom: 0;
-}
-
-.modal-feedback .feedback__form {
-  background-color: $basic-light;
   width: 780px;
-  min-height: 400px;
 
   @media(max-width: $tablet-width-only) {
+    left: calc(50% - 40vw);
     width: 80vw;
   }
 
   @media(max-width: $mobile-width-only) {
+    left: calc(50% - 47.5vw);
     width: 90vw;
+  }
+}
+
+// .modal-feedback__wrapper {
+//   margin-bottom: 0;
+// }
+
+.modal-feedback__form {
+  background-color: $basic-light;
+  min-height: 400px;
+
+  @media(max-width: $mobile-width-only) {
     min-height: 249px;
   }
 }
 
-.modal-feedback .button-close {
-  width: 20px;
-  height: 20px;
+.modal-feedback__button-close {
+  width: 30px;
+  height: 30px;
   position: absolute;
   background-color: transparent;
   border: none;
   top: 25px;
   right: 20px;
+  cursor: pointer;
 
   &::before,
   &::after {
@@ -69,6 +67,183 @@
   }
 }
 
-.modal-feedback .button-close {
+.modal-feedback__button-close {
   display: inline-block;
+}
+
+.modal-feedback__button {
+  min-width: 213px;
+  max-width: 300px;
+  cursor: pointer;
+
+  @media(max-width: $mobile-width-only) {
+    @include font(10px, 16px, 600);
+    min-width: 92px;
+    padding: 8px 12px;
+  }
+}
+
+.modal-feedback__form {
+  border: 1px solid $basic-dark;
+  width: 100%;
+  padding: 50px 70px 74px;
+  box-sizing: border-box;
+  margin-left: auto;
+  background-color: $basic-light;
+
+  @media(max-width: $mobile-width-only) {
+    padding: 31px 31px 43px;
+  }
+}
+
+.modal-feedback {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.modal-feedback__wrapper {
+  max-width: 780px;
+  margin-left: auto;
+  margin-bottom: 150px;
+
+  position: relative;
+
+  @media(max-width: $mobile-width-only) {
+    margin-bottom: 50px;
+  }
+}
+
+.modal-feedback__controls {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  @media(max-width: $mobile-width-only) {
+    margin-bottom: 30px;
+  }
+}
+
+.modal-feedback h2 {
+  @include font(36px, 54px, 300);
+  text-transform: lowercase;
+  margin-bottom: 10px;
+  margin-top: 0;
+
+  @media(max-width: $mobile-width-only) {
+    @include font(18px, 27px, 300);
+    margin-bottom: 2px;
+  }
+}
+
+
+
+.modal-feedback__success {
+  border: 1px solid $basic-dark;
+  padding: 50px 70px;
+  box-sizing: border-box;
+  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $basic-light;
+  width: 100%;
+  height: 100%;
+
+  @media(max-width: $mobile-width-only) {
+    padding: 31px;
+  }
+}
+
+.modal-feedback__success p {
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.modal-feedback__success p:first-child {
+  @include font(36px, 54px, 300);
+  margin: 0;
+  padding-bottom: 20px;
+  text-transform: lowercase;
+
+  @media(max-width: $mobile-width-only) {
+    @include font(18px, 27px, 300);
+  }
+}
+
+.modal-feedback__success .button {
+  @include font(14px, 21px, 600);
+  width: 223px;
+
+  &:hover {
+    color: rgba($basic-dark, 0.7);
+    border-color: rgba($basic-dark, 0.7);
+  }
+
+  @media(max-width: $mobile-width-only) {
+    @include font(10px, 16px, 600);
+    padding: 8px 0;
+  }
+}
+
+.modal-feedback input {
+  @include placeholder;
+  border: none;
+  border-bottom: 1px solid $basic-dark;
+  padding: 12px 0;
+  margin-bottom: 26px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $basic-dark;
+    padding: 12px 0 11px;
+  }
+
+  @media(max-width: $mobile-width-only) {
+    margin-bottom: 8px;
+    padding: 8px 0;
+
+    &:focus {
+      padding: 8px 0 7px;
+    }
+  }
+}
+
+.modal-feedback {
+  .button-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 1px;
+      background-color: $basic-dark;
+      right: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        height: 2px;
+      }
+    }
+  }
 }

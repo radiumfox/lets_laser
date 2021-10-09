@@ -1,9 +1,9 @@
 .faq__wrapper {
   max-width: 1040px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 97px;
   padding: 0 10px;
-  margin-bottom: 100px;
+  margin-bottom: 85px;
 
   @media(max-width: $mobile-width-only) {
     margin-bottom: 50px;
@@ -14,7 +14,8 @@
 .faq h2 {
   @include font(36px, 54px, 300);
   text-transform: lowercase;
-  margin-bottom: 27px;
+  margin-bottom: 26px;
+  margin-top: 0;
 
   @media(max-width: $mobile-width-only) {
     @include font(18px, 27px, 300);
@@ -49,7 +50,7 @@
 
 .faq__item {
   border-bottom: 1px solid rgba($basic-dark, 0.3);
-  padding: 23px 0;
+  padding: 23px 0 24px;
 
   &:last-child {
     border-bottom: none;
@@ -71,6 +72,7 @@
 
     &.unstyled {
       padding-left: 0;
+
       li::before {
         width: 0;
         content: "";
@@ -94,11 +96,12 @@
     width: 22.5px;
     height: 1px;
     background-color: $basic-dark;
-    top: 20px;
-    right: 0;
+    top: 17px;
+    right: 10px;
 
     @media(max-width: $mobile-width-only) {
-      top: 10px;
+      top: 6px;
+      right: 3px;
     }
   }
 
@@ -127,7 +130,7 @@
     height: 1px;
     background-color: $basic-dark;
     top: 20px;
-    right: 0;
+    right: 10px;
     transform: rotate(180deg);
     transition: transform .1s ease-in-out;
 
@@ -136,34 +139,7 @@
     }
   }
 
-
   &:hover::after {
     height: 2px;
-  }
-}
-
-.fade {
-  transition: all .2s ease-in-out;
-
-  &:not(.show) {
-    opacity: 0;
-  }
-}
-
-.collapse {
-  &:not(.show) {
-    display: none;
-  }
-}
-
-.collapsing {
-  height: 0;
-  overflow: hidden;
-  transition: all .2s ease-in-out;
-
-  &.collapse-horizontal {
-    width: 0;
-    height: auto;
-    transition: all .2s ease-in-out;
   }
 }

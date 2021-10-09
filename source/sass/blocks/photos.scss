@@ -13,15 +13,15 @@
   }
 }
 
-.photos .bullets {
-  margin: 0 auto;
+.photos .bullets__list {
+  margin: 28px auto 0;
 }
 
 .photos ul {
   @include reset-list;
   display: flex;
   align-items: flex-end;
-  margin: 0 auto 30px;
+  margin: 0 auto;
   flex-wrap: nowrap;
   min-width: max-content;
 
@@ -46,7 +46,7 @@
 }
 
 .photos__wrapper {
-  margin: 50px auto 222px;
+  margin: 50px auto 214px;
   overflow-x: hidden;
 
   @media(max-width: $tablet-width-only) {

@@ -49,7 +49,7 @@
 .feedback h2 {
   @include font(36px, 54px, 300);
   text-transform: lowercase;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   margin-top: 0;
 
   @media(max-width: $mobile-width-only) {
@@ -59,13 +59,14 @@
 }
 
 .feedback button {
-  // min-width: 213px;
+  min-width: 213px;
+  max-width: 300px;
   cursor: pointer;
 
   @media(max-width: $mobile-width-only) {
     @include font(10px, 16px, 600);
-    // min-width: 92px;
-    width: 92px;
+    min-width: 92px;
+
     padding: 8px 12px;
   }
 }
@@ -122,7 +123,7 @@
   @include placeholder;
   border: none;
   border-bottom: 1px solid $basic-dark;
-  padding: 10px 0;
+  padding: 12px 0;
   margin-bottom: 26px;
 
   &:last-of-type {
@@ -132,7 +133,7 @@
   &:focus {
     outline: none;
     border-bottom: 2px solid $basic-dark;
-    padding: 10px 0 9px;
+    padding: 12px 0 11px;
   }
 
   @media(max-width: $mobile-width-only) {

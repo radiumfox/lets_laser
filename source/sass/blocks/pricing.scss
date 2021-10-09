@@ -1,11 +1,11 @@
 .pricing__wrapper {
   max-width: 1040px;
   margin: 0 auto;
-  margin-top: 68px;
+
   margin-bottom: 190px;
 
   @media(max-width: $mobile-width-only) {
-    margin-top: 46px;
+
     margin-bottom: 48px;
   }
 }
@@ -14,12 +14,7 @@
   @include font(36px, 54px, 300);
   text-transform: lowercase;
   margin: 0;
-  padding: 0 0 50px;
-
-
-  @media(max-width: $tablet-width-only) {
-    padding: 0 10px 50px;
-  }
+  padding: 0 10px 50px;
 
   @media(max-width: $mobile-width-only) {
     @include font(18px, 27px, 300);
@@ -31,10 +26,7 @@
   @include reset-list;
   display: flex;
   padding-bottom: 30px;
-
-  @media(max-width: $tablet-width-only) {
-    padding: 0 10px 30px;
-  }
+  padding: 0 10px 30px;
 
   @media(max-width: $mobile-width-only) {
     padding: 0 10px 26px;
@@ -82,7 +74,6 @@
   }
 }
 
-
 .pricing__table {
   font-family: "Optimo Plain", "Helvetica", sans-serif;
   text-align: left;
@@ -104,21 +95,17 @@
     @include font(36px, 34px, 600);
     text-transform: lowercase;
     width: 25%;
-    min-height: 120px;
     box-sizing: border-box;
-    padding-left: 50px;
-    padding-top: 35px;
-    padding-bottom: 30px;
+    padding: 8px 8px 8px 38px;
 
     @media(max-width: $mobile-width-only) {
       @include font(11px, 16px, 600);
-      padding-top: 17px;
       width: 23.92%;
-      padding-left: 10px;
       vertical-align: top;
+      padding: 17px 5px 8px 10px;
 
       span {
-        padding-top: 5px;
+        padding-top: 4px;
       }
     }
   }
@@ -126,7 +113,13 @@
   .pricing__th-box {
     display: flex;
     flex-direction: column;
-    padding-bottom: 8px;
+    justify-content: center;
+    min-height: 103px;
+
+    @media(max-width: $mobile-width-only) {
+      min-height: 97px;
+      justify-content: flex-start;
+    }
   }
 
   span {
@@ -143,21 +136,18 @@
     text-align: center;
     box-sizing: border-box;
     width: 23%;
-    // min-height: 121px;
-    // height: 121px;
+    word-break: break-all;
+    padding: 8px;
 
-    @media(max-width: $mobile-width-only) {
-      @include font(11px, 16px, 600);
+    @media(max-width: $tablet-small) {
+      @include font(20px, 30px, 250);
       vertical-align: top;
       padding-top: 17px;
       width: 18.7%;
     }
-  }
 
-  tr:last-child td {
-    @media(max-width: $mobile-width-only) {
-      min-height: 80px;
-      height: 90px;
+    @media(max-width: $mobile-small) {
+      @include font(11px, 16px, 600);
     }
   }
 
@@ -180,23 +170,28 @@
   display: none;
 }
 
-.pricing .pricing__sessions {
-  td {
-    padding: 6px 20px 16px;
-    // height: 60px;
+.pricing__sessions {
+  th {
+    width: auto;
+    padding-top: 16px;
+    padding-left: 0;
+
+    @media(max-width: $mobile-width-only) {
+      padding-top: 12px;
+      padding-right: 0;
+      padding: 12px 8px 0;
+    }
   }
-}
 
-.pricing__box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 100px;
-  margin: 0 auto;
+  .pricing__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 96px;
+    margin: 0 auto;
+  }
 
-  @media(max-width: $mobile-width-only) {
-    padding: 18px 5px 10px;
-    text-align: center;
-    align-items: center;
+  th:nth-child(2n) {
+    background-color: rgba($secondary-light, 0.5);
   }
 }

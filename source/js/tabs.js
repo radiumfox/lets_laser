@@ -6,10 +6,6 @@ if(tabLinks) {
   tabLinks.forEach(link => link.removeAttribute('href'));
 }
 
-// if(tabContent) {
-//   tabContent[1].classList.add('hide');
-// }
-
 if(tabs) {
   tabs.addEventListener("click", (evt)=> {
     evt.preventDefault();

@@ -131,28 +131,27 @@
         <source srcset="assets/pexels-koolshooters-8955991.webm" type="video/webm">
         <source src="assets/pexels-koolshooters-8955991.mp4" type="video/mp4">
       </video>
-
     </header>
 
     <main class="page-main">
 
-      <section class="modal-feedback feedback" id="modal-window">
-        <div class="feedback__wrapper modal-feedback__wrapper">
-          <form class="feedback__form" action="#" method="POST">
+      <section class="modal-feedback" id="modal-window">
+        <div class="modal-feedback__wrapper">
+          <form class="modal-feedback__form" action="#" method="POST">
             <h2>Перезвоните мне</h2>
-            <div class="feedback__controls">
+            <div class="modal-feedback__controls">
               <input type="text" id="modal-feedback-name" placeholder="Имя">
               <label class="visually-hidden" for="modal-feedback-name"></label>
-              <input type="number" id="modal-feedback-phone" placeholder="Телефон" required>
+              <input type="tel" id="modal-feedback-phone" placeholder="Телефон" required>
               <label class="visually-hidden" for="modal-feedback-phone"></label>
             </div>
-            <button class="button" type="submit">Отправить</button>
-            <button class="button-close" id="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+            <button class="modal-feedback__button button" type="submit">Отправить</button>
+            <button class="modal-feedback__button-close" id="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
           </form>
         </div>
       </section>
 
-      <!-- <section class="about" id="about">
+      <section class="about" id="about">
         <div class="about__wrapper">
           <div class="about__content">
             <div class="about__text-box">
@@ -177,9 +176,9 @@
           </div>
 
         </div>
-      </section> -->
+      </section>
 
-      <!-- <section class="pricing" id="prices">
+      <section class="pricing" id="prices">
         <div class="pricing__wrapper">
           <h2>Цены</h2>
 
@@ -195,29 +194,29 @@
           <table class="pricing__table tab-content" id="complexes">
             <tr class="pricing__sessions">
               <td></td>
-              <td>
+              <th>
                 <div class="pricing__box">
                   <span>1 сеанс</span>
                 </div>
-              </td>
-              <td>
+              </th>
+              <th>
                 <div class="pricing__box">
                   <span>4 сеанса</span>
-                  <span>3 + 1 в подарок</span>
+                  <span>3 + 1 в&nbsp;подарок</span>
                 </div>
-              </td>
-              <td>
+              </th>
+              <th>
                 <div class="pricing__box">
                   <span>6 сеансов</span>
-                  <span>4 + 2 в подарок</span>
+                  <span>4 + 2 в&nbsp;подарок</span>
                 </div>
-              </td>
-              <td>
+              </th>
+              <th>
                 <div class="pricing__box">
                   <span>10 сеансов</span>
-                  <span>6 + 4 в подарок</span>
+                  <span>6 + 4 в&nbsp;подарок</span>
                 </div>
-              </td>
+              </th>
             </tr>
             <tr>
               <th>
@@ -284,29 +283,29 @@
           <table class="pricing__table tab-content hide" id="abonements">
             <tr class="pricing__sessions">
               <td></td>
-              <td>
+              <th>
                 <div class="pricing__box">
                   <span>1 сеанс</span>
                 </div>
-              </td>
-              <td>
+              </th>
+              <th>
                 <div class="pricing__box">
                   <span>4 сеанса</span>
-                  <span>3 + 1 в подарок</span>
+                  <span>3 + 1 в&nbsp;подарок</span>
                 </div>
-              </td>
-              <td>
+              </th>
+              <th>
                 <div class="pricing__box">
                   <span>6 сеансов</span>
-                  <span>4 + 2 в подарок</span>
+                  <span>4 + 2 в&nbsp;подарок</span>
                 </div>
-              </td>
-              <td>
+              </th>
+              <th>
                 <div class="pricing__box">
                   <span>10 сеансов</span>
-                  <span>6 + 4 в подарок</span>
+                  <span>6 + 4 в&nbsp;подарок</span>
                 </div>
-              </td>
+              </th>
             </tr>
             <tr>
               <th>
@@ -365,7 +364,7 @@
             </tr>
           </table>
         </div>
-      </section> -->
+      </section>
 
       <section class="reviews" id="reviews">
         <h2>Отзывы</h2>
@@ -373,7 +372,7 @@
 
           <div class="reviews__carousel">
             <div id="reviewsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" >
-              <div class="carousel-indicators bullets">
+              <div class="carousel-indicators bullets__list">
                 <button class="bullet active" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="К первому слайду">
                   <span class="bullet__text">1<span>\ 4</span></span>
                 </button>
@@ -586,10 +585,9 @@
         </div>
       </section>
 
-      <section class="photos" id="photos">
+      <!-- <section class="photos" id="photos">
         <h2>Фото</h2>
         <div class="photos__wrapper">
-
           <div class="wrap">
             <div class="glide photos__carousel">
               <div class="glide__track" data-glide-el="track">
@@ -608,7 +606,7 @@
                   </li>
                 </ul>
                 <div class="photos__bullets-wrapper">
-                  <div class="glide__bullets bullets" data-glide-el="controls[nav]">
+                  <div class="glide__bullets bullets__list" data-glide-el="controls[nav]">
                     <button class="bullet" type="button" data-glide-dir="=0" aria-label="К первому слайду"></button>
                     <button class="bullet" type="button" data-glide-dir="=1" aria-label="Ко второму слайду"></button>
                     <button class="bullet" type="button" data-glide-dir="=2" aria-label="К третьему слайду"></button>
@@ -618,18 +616,17 @@
               </div>
             </div>
           </div>
-
         </div>
-      </section>
+      </section> -->
 
-      <!-- <section class="feedback" id="feedback">
+      <section class="feedback" id="feedback">
         <div class="feedback__wrapper">
           <form class="feedback__form" action="#" method="POST">
             <h2>Перезвоните мне</h2>
             <div class="feedback__controls">
-              <input type="text" id="name" placeholder="Имя">
-              <label class="visually-hidden" for="name"></label>
-              <input type="number" id="feedback-phone" placeholder="Телефон" required>
+              <input type="text" id="feedback-name" placeholder="Имя">
+              <label class="visually-hidden" for="feedback-name"></label>
+              <input type="tel" id="feedback-phone" placeholder="Телефон" required>
               <label class="visually-hidden" for="feedback-phone"></label>
             </div>
             <button class="button" type="submit">Отправить</button>
@@ -643,7 +640,7 @@
             </div>
           </template>
         </div>
-      </section> -->
+      </section>
 
       <template id="success">
         <div class="feedback__success">
