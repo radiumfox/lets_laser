@@ -47,10 +47,6 @@
 .page-header__wrapper {
   padding: 38px 0 0;
 
-  @media(max-width: $tablet-width-only) {
-    padding: 21px 0 0;
-  }
-
   @media(max-width: $mobile-width-only) {
     padding: 20px 0 25px;
   }
@@ -136,13 +132,13 @@
     .main-nav__wrapper {
       position: static;
       background-color: transparent;
-
     }
 
     .main-nav__wrap {
       height: auto;
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
     }
 
     .main-nav__wrapper.collapse:not(.show) {
@@ -161,7 +157,5 @@
         padding-bottom: 40px;
       }
     }
-
-
   }
 }

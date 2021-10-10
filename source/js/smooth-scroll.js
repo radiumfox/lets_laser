@@ -1,19 +1,16 @@
 const navMain = document.querySelector('.main-nav');
-
-const navFooter = document.querySelector('.page-footer__nav-list');
+const pageFooter = document.querySelector('.page-footer');
 
 const treatLinks = (link) => {
-  link.removeAttribute('href');
   link.addEventListener('click', (evt)=> {
-    const id = evt.target.dataset.id;
-    const element = document.querySelector(`#${id}`);
-    element.scrollIntoView({block: 'center', behavior: 'smooth'});
+    evt.preventDefault();
+    const id = link.getAttribute('href');
+    document.querySelector(id).scrollIntoView({block: 'start', behavior: 'smooth'});
   });
-
 }
 
-if (navFooter) {
-  const footerLinks = navFooter.querySelectorAll('a');
+if (pageFooter) {
+  const footerLinks = pageFooter.querySelectorAll('a');
   footerLinks.forEach(link => treatLinks(link));
 };
 

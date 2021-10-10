@@ -45,7 +45,7 @@
   }
 }
 
-.pricing__tabs a {
+.pricing__tab {
   @include font(24px, 36px, 600);
   text-transform: lowercase;
   color: $tertiary-light;
@@ -63,12 +63,12 @@
   }
 }
 
-.pricing__tabs a.current {
+.pricing__tab--current {
   color: $basic-dark;
   cursor: auto;
 }
 
-.pricing__tabs li:last-child a {
+.pricing__tab-item:last-child .pricing__tab {
   span {
     display: none;
   }
@@ -166,7 +166,7 @@
   }
 }
 
-.pricing table.hide {
+.pricing__table--hide {
   display: none;
 }
 
@@ -193,5 +193,21 @@
 
   th:nth-child(2n) {
     background-color: rgba($secondary-light, 0.5);
+  }
+}
+
+
+// No JS
+
+.pricing__table--nojs {
+  display: table;
+  margin-bottom: 20px;
+}
+
+.pricing__table-title {
+  display: none;
+
+  &--nojs {
+    display: block;
   }
 }

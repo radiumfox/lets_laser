@@ -20,10 +20,14 @@
         <div class="page-header__menu page-header__menu--nojs">
           <div class="page-header__address-logo">
             <a class="page-header__logo">
-              <img class="page-header__logo-image" src="assets/logo.svg" width="58" height="60" alt="Логотип">
+              <img src="assets/logo.svg" width="58" height="60" alt="Логотип Let's Laser">
             </a>
             <address class="page-header__address">СПб<br> Социалистическая улица, 21, 2 этаж</address>
           </div>
+          <!-- начиная с планшетной ширины:
+            main-nav--closed - меню закрыто, кнопка-гамбургер;
+            main-nav--opened - меню открыто, кнопка-крестик;
+            main-nav--no-js - меню в потоке, кнопок нет -->
           <nav class="main-nav main-nav--closed main-nav--nojs">
             <button class="main-nav__toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-label="Открыть основное меню">
             </button>
@@ -31,26 +35,26 @@
               <div class="main-nav__wrap">
                 <ul class="main-nav__list">
                   <li class="main-nav__item">
-                    <a href="#about" data-id="about">О нас</a>
+                    <a href="#about">О нас</a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="#prices" data-id="prices">Цены</a>
+                    <a href="#prices">Цены</a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="#reviews" data-id="reviews">Отзывы</a>
+                    <a href="#reviews">Отзывы</a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="#faq" data-id="faq">Вопросы</a>
+                    <a href="#faq">Вопросы</a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="#photos" data-id="photos">Фото</a>
+                    <a href="#photos">Фото</a>
                   </li>
                 </ul>
-                <!-- <div class="main-nav__item main-nav__item--tel">
+                <div class="main-nav__item main-nav__item--tel">
                   <a href="tel:79851144282">
                     <span>+7 985 114 42 82</span>
                   </a>
-                </div> -->
+                </div>
                 <div class="main-nav__contacts contacts">
                   <button class="contacts__toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contacts-menu" aria-label="Открыть меню">
                   </button>
@@ -108,7 +112,6 @@
 
         <section class="page-header__intro intro">
           <div class="intro__wrapper carousel slide carousel-fade" data-bs-ride="carousel">
-            <!-- <div class="intro__wrapper " > -->
             <div class="intro__title" tabindex="1">
               <h1>Let's laser</h1>
               <p>Студия лазерной эпиляции</p>
@@ -125,9 +128,7 @@
         </section>
       </div>
 
-      <video class="page-header__movie" muted playsinline preload="metadata">
-        <source src="assets/pexels-koolshooters-8955991-mob.webm" media="(max-width: 767px)" type="video/webm">
-        <source src="assets/pexels-koolshooters-8955991-mob.mp4" media="(max-width: 767px)" type="video/mp4">
+      <video class="page-header__movie" muted playsinline preload="metadata" width="360" height="256">
         <source src="assets/pexels-koolshooters-8955991.webm" type="video/webm">
         <source src="assets/pexels-koolshooters-8955991.mp4" type="video/mp4">
       </video>
@@ -140,13 +141,13 @@
           <form class="modal-feedback__form" action="#" method="POST">
             <h2>Перезвоните мне</h2>
             <div class="modal-feedback__controls">
-              <input type="text" id="modal-feedback-name" placeholder="Имя">
+              <input type="text" id="modal-feedback-name" placeholder="Имя" required>
               <label class="visually-hidden" for="modal-feedback-name"></label>
-              <input type="tel" id="modal-feedback-phone" placeholder="Телефон" required>
+              <input type="tel" id="modal-feedback-phone" minlength="10" placeholder="Телефон" required>
               <label class="visually-hidden" for="modal-feedback-phone"></label>
             </div>
             <button class="modal-feedback__button button" type="submit">Отправить</button>
-            <button class="modal-feedback__button-close" id="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+            <button class="modal-feedback__button-close" id="modal-close" type="button" aria-label="Закрыть"></button>
           </form>
         </div>
       </section>
@@ -164,15 +165,11 @@
               </div>
           </div>
           <div class="about__movie-box">
-            <video class="about__movie" muted playsinline preload="metadata">
-              <source src="assets/pexels-karolina-grabowska-8371229-mob.webm" media="(max-width: 767px)" type="video/webm">
-              <source src="assets/pexels-karolina-grabowska-8371229-mob.mp4" media="(max-width: 767px)" type="video/mp4">
+            <video class="about__movie" muted playsinline preload="metadata" width="219" height="649" >
               <source src="assets/pexels-karolina-grabowska-8371229.webm" type="video/webm">
               <source src="assets/pexels-karolina-grabowska-8371229.mp4" type="video/mp4">
             </video>
-            <button type="button">
-              <span class="visually-hidden">Чат</span>
-            </button>
+            <button type="button" aria-label="Открыть чат"></button>
           </div>
 
         </div>
@@ -182,16 +179,17 @@
         <div class="pricing__wrapper">
           <h2>Цены</h2>
 
-          <ul class="pricing__tabs tabs">
-            <li>
-              <a class="pricing__tab tab current" data-id="complexes" href="#complexes">Комплексы <span>\</span></a>
+          <ul class="pricing__tabs">
+            <li class="pricing__tab-item">
+              <a class="pricing__tab pricing__tab--current" data-id="complexes">Комплексы <span>\</span></a>
             </li>
-            <li >
-              <a class="pricing__tab tab" data-id="abonements" href="#abonements">Абонементы <span>\</span></a>
+            <li class="pricing__tab-item">
+              <a class="pricing__tab" data-id="abonements">Абонементы <span>\</span></a>
             </li>
           </ul>
 
-          <table class="pricing__table tab-content" id="complexes">
+          <h2 class="pricing__table-title pricing__table-title--nojs">Комплексы</h2>
+          <table class="pricing__table pricing__table--nojs" id="complexes">
             <tr class="pricing__sessions">
               <td></td>
               <th>
@@ -280,7 +278,8 @@
             </tr>
           </table>
 
-          <table class="pricing__table tab-content hide" id="abonements">
+          <h2 class="pricing__table-title pricing__table-title--nojs">Абонементы</h2>
+          <table class="pricing__table pricing__table--hide pricing__table--nojs" id="abonements">
             <tr class="pricing__sessions">
               <td></td>
               <th>
@@ -369,50 +368,67 @@
       <section class="reviews" id="reviews">
         <h2>Отзывы</h2>
         <div class="reviews__wrapper">
-
           <div class="reviews__carousel">
             <div id="reviewsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" >
-              <div class="carousel-indicators bullets__list">
-                <button class="bullet active" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="К первому слайду">
-                  <span class="bullet__text">1<span>\ 4</span></span>
+              <div class="bullets carousel-indicators">
+                <button class="bullets__item active" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" aria-current="true" aria-label="К первому слайду">
+                  <span class="bullets__text">1<span>\ 4</span></span>
                 </button>
-                <button class="bullet" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Ко второму слайду">
-                  <span class="bullet__text">2<span>\ 4</span></span>
+                <button class="bullets__item" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Ко второму слайду">
+                  <span class="bullets__text">2<span>\ 4</span></span>
                 </button>
-                <button class="bullet" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="К третьему слайду">
-                  <span class="bullet__text">3<span>\ 4</span></span>
+                <button class="bullets__item" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="К третьему слайду">
+                  <span class="bullets__text">3<span>\ 4</span></span>
                 </button>
-                <button class="bullet" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" aria-label="К четвертому слайду">
-                  <span class="bullet__text">4<span>\ 4</span></span>
+                <button class="bullets__item" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" aria-label="К четвертому слайду">
+                  <span class="bullets__text">4<span>\ 4</span></span>
                 </button>
               </div>
-              <ul class="reviews__list slider__list carousel-inner">
+              <ul class="reviews__list carousel-inner">
                 <li class="reviews__item carousel-item active">
                   <div class="reviews__item-wrap">
-                    <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    <picture>
+                      <source type="image/webp" media="(max-width: 767px)" srcset="assets/review-mob.webp 1x, assets/review-mob@2x.webp 2x">
+                      <source type="image/webp" srcset="assets/review-desk.webp 1x, assets/review-desk@2x.webp 2x">
+                      <!-- 1х: 351px; 2x: 702px -->
+                      <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    </picture>
                   </div>
                 </li>
                 <li class="reviews__item carousel-item">
                   <div class="reviews__item-wrap">
-                    <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    <picture>
+                      <source type="image/webp" media="(max-width: 767px)" srcset="assets/review-mob.webp 1x, assets/review-mob@2x.webp 2x">
+                      <source type="image/webp" srcset="assets/review-desk.webp 1x, assets/review-desk@2x.webp 2x">
+                      <!-- 1х: 351px; 2x: 702px -->
+                      <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    </picture>
                   </div>
                 </li>
                 <li class="reviews__item carousel-item">
                   <div class="reviews__item-wrap">
-                    <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    <picture>
+                      <source type="image/webp" media="(max-width: 767px)" srcset="assets/review-mob.webp 1x, assets/review-mob@2x.webp 2x">
+                      <source type="image/webp" srcset="assets/review-desk.webp 1x, assets/review-desk@2x.webp 2x">
+                      <!-- 1х: 351px; 2x: 702px -->
+                      <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    </picture>
                   </div>
                 </li>
                 <li class="reviews__item carousel-item">
                   <div class="reviews__item-wrap">
-                    <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    <picture>
+                      <source type="image/webp" media="(max-width: 767px)" srcset="assets/review-mob.webp 1x, assets/review-mob@2x.webp 2x">
+                      <source type="image/webp" srcset="assets/review-desk.webp 1x, assets/review-desk@2x.webp 2x">
+                      <!-- 1х: 351px; 2x: 702px -->
+                      <img src="assets/review-desk.jpg" width="351" height="166" alt="Отзыв">
+                    </picture>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
-          <video class="reviews__movie" muted playsinline preload="metadata">
-            <source src="assets/pexels-anna-nekrashevich-8516672-mob.webm" media="(max-width: 767px)" type="video/webm">
-            <source src="assets/pexels-anna-nekrashevich-8516672-mob.mp4" media="(max-width: 767px)" type="video/mp4">
+          <video class="reviews__movie" muted playsinline preload="metadata" width="360" height="399">
             <source src="assets/pexels-anna-nekrashevich-8516672.webm" type="video/webm">
             <source src="assets/pexels-anna-nekrashevich-8516672.mp4" type="video/mp4">
           </video>
@@ -425,7 +441,7 @@
           <ul class="faq__list">
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Каковы основные преимущества лазерной эпиляции?</button>
-              <div class="faq__content collapse" id="collapseOne">
+              <div class="faq__content" id="collapseOne">
                 <ul>
                   <li>Вы избавитесь от надоедливых волос быстро, безболезненно и безопасно.</li>
                   <li>Выбирая лазерную эпиляцию, Вы экономите свои деньги и время. Только представьте, сколько станков, кремов для депиляции, воска или сахара Вы тратите за всю свою жизнь? Получая в итоге щетину, врастания, болячки и тёмные пятна.</li>
@@ -443,7 +459,7 @@
             </li>
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">На каком аппарате вы работаете?</button>
-              <div class="faq__content collapse" id="collapseTwo">
+              <div class="faq__content" id="collapseTwo">
                 <p>В нашей студии мы работаем на аппарате  для лазерной эпиляции AnchorFree 808‑M.</p>
                 <p>Его приемущества:</p>
                 <ul>
@@ -467,7 +483,7 @@
             </li>
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">Какие есть противопоказания?</button>
-              <div class="faq__content collapse" id="collapseThree">
+              <div class="faq__content" id="collapseThree">
                 <ul>
                   <li>Беременность и лактация</li>
                   <li>Возраст до 18 лет</li>
@@ -494,7 +510,7 @@
             </li>
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">Почему нельзя удалить все волосы за 1 сеанс?</button>
-              <div class="faq__content collapse" id="collapseFour">
+              <div class="faq__content" id="collapseFour">
                 <p>Лазер может полностью разрушить только волосяные фолликулы, находящиеся в стадии активного роста. Таких фолликулов на всём теле единовременно может быть от 5% до 30%, остальные находятся в недоступной для лазера фазе (в спящей).</p>
                 <p>Через 1-2 месяца постепенно активизируются другие волоски, которые на момент проведения процедуры находились в стадии покоя, именно они подлежат повторной обработке и так раз за разом.</p>
                 <p>Чтобы удалить все волосы на теле в стадии активного роста, нужен индивидуальный курс процедур. В среднем он составляет 12 сеансов для черных волос и 14 для русых. С каждой процедурой волосков будет становиться все меньше и меньше, до полного их исчезновения.</p>
@@ -505,7 +521,7 @@
 
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">Можно ли делать эпиляцию в критические дни?</button>
-              <div class="faq__content collapse" id="collapseFive">
+              <div class="faq__content" id="collapseFive">
                 <p>Специалисты в LET’S LASER считают, что прямого запрета на проведение Лазерной эпиляции во время месячных не существует. Но следует учесть, что:</p>
                 <ul class="unstyled">
                   <li>⋆ в критические дни повышается чувствительность в таких деликатных местах, как подмышки и бикини.</li>
@@ -517,7 +533,7 @@
 
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">Безопасна ли лазерная эпиляция в области бикини?</button>
-              <div class="faq__content collapse" id="collapseSix">
+              <div class="faq__content" id="collapseSix">
                 <p>Эпиляция в зоне бикини с помощью лазера абсолютно безопасна для женского организма.</p>
                 <p>Лучи лазера с длиной 808 НМ не могут спровоцировать (если у вас нет противопоказаний) какие-либо осложнения в женском организме, так как луч достигает только до фолликул.</p>
               </div>
@@ -525,10 +541,10 @@
 
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">Зачем обматывать манипулу одноразовой плёнкой?</button>
-              <div class="faq__content collapse" id="collapseSeven">
+              <div class="faq__content" id="collapseSeven">
                 <p>Возможно вы замечали, что после каждого пациента, наш специалисты оборачивают манипулу одноразовой пленкой. Зачем?</p>
                 <ul class="unstyled">
-                  <li>⋆ Одноразовая пленка во время процедуры лазерной эпиляции создает дополнительный гигиенический барьер, создавая пациенту дополнительную защиту.</li>⠀⠀
+                  <li>⋆ Одноразовая пленка во время процедуры лазерной эпиляции создает дополнительный гигиенический барьер, создавая пациенту дополнительную защиту.</li>
                   <li>⋆ Дезинфекция проводится спиртосодержащими профессиональными антисептиками, используемыми в медицине.</li>
                   <li>⋆ Так же хотим отметить, на будущий результат от процедур это никак не влияет. Пленка не препятствует воздействию луча в ткани.</li>
                 </ul>
@@ -540,7 +556,7 @@
 
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight">Как удалять волосы во время курса эпиляции?</button>
-              <div class="faq__content collapse" id="collapseEight">
+              <div class="faq__content" id="collapseEight">
                 <p>Во время курса лазерной эпиляции волоски удаляются только</p>
                 <ul>
                   <li>Бритвой</li>
@@ -558,7 +574,7 @@
 
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine">Что делать, если я иду впервые и очень стесняюсь?</button>
-              <div class="faq__content collapse" id="collapseNine">
+              <div class="faq__content" id="collapseNine">
                 <p>Не переживай, стеснение пройдёт сразу после первой процедуры️ вы будете себя спрашивать: «Почему я не сделала этого раньше?».</p>
                 <p>Как подготовиться?</p>
                 <ul>
@@ -573,7 +589,7 @@
 
             <li class="faq__item">
               <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen">Делаете ли вы мужскую эпиляцию?</button>
-              <div class="faq__content collapse" id="collapseTen">
+              <div class="faq__content" id="collapseTen">
                 <p>Ещё как делаем. Бритье у мужчин сопряжено с большими рисками, чем у женщин. Прежде всего - из-за особенностей волос и кожи. Мужская кожа более плотная, а волосяной стержень - более жесткий.</p>
                 <p>В итоге после того, как сбритый волос начинает отрастать заново, ему сложнее пробиться через ороговевший слой кожи. И он начинает расти вниз, провоцируя врастание, воспаления, травматическую пигментацию кожи и другие неприятные последствия.</p>
                 <p>- Делают ли мужчины лазерную эпиляцию бикини?</p>
@@ -589,20 +605,36 @@
         <h2>Фото</h2>
         <div class="photos__wrapper">
           <div class="photos__carousel-wrapper">
-            <div id="photosCarousel" class="photos__carousel splide">
+            <div id="photosCarousel" class="photos__carousel photos__carousel--noj splide">
               <div class="splide__track">
-                <ul class="photos__slides splide__list">
+                <ul class="photos__slides photos__slides--nojs splide__list">
                   <li class="photos__slide splide__slide">
-                    <img src="assets/photo1.jpg" width="520" height="700" alt="photo">
+                    <picture>
+                      <source type="image/webp" srcset="assets/photo1.webp 1x, assets/photo1@2x.webp 2x">
+                      <!-- 1х: 450px; 2x: 900px -->
+                      <img src="assets/photo1.jpg" width="450" height="609" alt="Фото">
+                    </picture>
                   </li>
                   <li class="photos__slide splide__slide">
-                    <img src="assets/photo2.jpg" width="520" height="700" alt="photo">
+                    <picture>
+                      <source type="image/webp" srcset="assets/photo2.webp 1x, assets/photo2@2x.webp 2x">
+                      <!-- 1х: 450px; 2x: 900px -->
+                      <img src="assets/photo2.jpg" width="520" height="700" alt="Фото">
+                    </picture>
                   </li>
                   <li class="photos__slide splide__slide">
-                    <img src="assets/photo3.jpg" width="520" height="700" alt="photo">
+                    <picture>
+                      <source type="image/webp" srcset="assets/photo3.webp 1x, assets/photo3@2x.webp 2x">
+                      <!-- 1х: 450px; 2x: 900px -->
+                      <img src="assets/photo3.jpg" width="520" height="700" alt="Фото">
+                    </picture>
                   </li>
                   <li class="photos__slide splide__slide">
-                    <img src="assets/photo4.jpg" width="520" height="700" alt="photo">
+                    <picture>
+                      <source type="image/webp" srcset="assets/photo4.webp 1x, assets/photo4@2x.webp 2x">
+                      <!-- 1х: 450px; 2x: 900px -->
+                      <img src="assets/photo4.jpg" width="520" height="700" alt="Фото">
+                    </picture>
                   </li>
                 </ul>
               </div>
@@ -616,21 +648,13 @@
           <form class="feedback__form" action="#" method="POST">
             <h2>Перезвоните мне</h2>
             <div class="feedback__controls">
-              <input type="text" id="feedback-name" placeholder="Имя">
+              <input type="text" id="feedback-name" placeholder="Имя" required>
               <label class="visually-hidden" for="feedback-name"></label>
-              <input type="tel" id="feedback-phone" placeholder="Телефон" required>
+              <input type="tel" id="feedback-phone" minlength="10" placeholder="Телефон" required>
               <label class="visually-hidden" for="feedback-phone"></label>
             </div>
             <button class="button" type="submit">Отправить</button>
           </form>
-          <template id="success">
-            <div class="feedback__success">
-              <p>Спасибо!</p>
-              <p>наш менеджер перезвонит вам в течение 15 минут.</p>
-              <button class="feedback__success-button button" type="button">Отправить ещё раз</button>
-              <button class="button-close" id="success-close" type="button"><span class="visually-hidden">Закрыть</span></button>
-            </div>
-          </template>
         </div>
       </section>
 
@@ -639,7 +663,7 @@
           <p>Спасибо!</p>
           <p>наш менеджер перезвонит вам в течение 15 минут.</p>
           <button class="feedback__success-button button" type="button">Отправить ещё раз</button>
-          <button class="button-close" id="success-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+          <button class="button-close" id="success-close" type="button" aria-label="Закрыть сообщение"></button>
         </div>
       </template>
     </main>
@@ -648,19 +672,19 @@
       <div class="page-footer__wrapper">
         <ul class="page-footer__nav-list">
           <li class="page-footer__nav-item">
-            <a class="page-footer__nav-link" href="#about" data-id="about">О нас</a>
+            <a class="page-footer__nav-link" href="#about">О нас</a>
           </li>
           <li class="page-footer__nav-item">
-            <a class="page-footer__nav-link" href="#prices" data-id="prices">Цены</a>
+            <a class="page-footer__nav-link" href="#prices">Цены</a>
           </li>
           <li class="page-footer__nav-item">
-            <a class="page-footer__nav-link" href="#reviews" data-id="reviews">Отзывы</a>
+            <a class="page-footer__nav-link" href="#reviews">Отзывы</a>
           </li>
           <li class="page-footer__nav-item">
-            <a class="page-footer__nav-link" href="#faq" data-id="faq">Вопросы</a>
+            <a class="page-footer__nav-link" href="#faq">Вопросы</a>
           </li>
           <li class="page-footer__nav-item">
-            <a class="page-footer__nav-link" href="#photos" data-id="photos">Фото</a>
+            <a class="page-footer__nav-link" href="#photos">Фото</a>
           </li>
         </ul>
 
@@ -670,17 +694,16 @@
               instagram
             </a>
           </li>
-          <li class="page-footer__social-item page-footer__social-item--vk">
+          <li class="page-footer__social-item">
             <a href="#" class="page-footer__social-link">
               vk
             </a>
           </li>
         </ul>
-        <a class="page-footer__logo" href="page-header">
-          <img class="page-footer__logo-image" src="assets/logo.svg" width="96" height="100" alt="Логотип">
+        <a class="page-footer__logo" href="#page-header">
+          <img class="page-footer__logo-image" src="assets/logo.svg" width="96" height="100" alt="Логотип Let's Laser">
         </a>
         <div class="page-footer__box">
-
           <ul class="page-footer__contacts-list">
             <li>
               <address>
@@ -697,6 +720,7 @@
       </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
   </body>
 </html>

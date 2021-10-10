@@ -13,7 +13,7 @@
   }
 }
 
-.photos .bullets__list {
+.photos .bullets {
   margin: 28px auto 0;
   padding-left: 0;
   position: relative;
@@ -106,5 +106,20 @@
 
   @media(max-width: $mobile-width-only) {
     height: 457px;
+  }
+}
+
+
+// no JS
+
+.photos__carousel--noj {
+  visibility: visible;
+}
+
+.photos__slides--nojs {
+  display: block;
+
+  li {
+    justify-content: center;
   }
 }

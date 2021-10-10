@@ -14,6 +14,7 @@ const sass = require("gulp-sass");
 const concat = require("gulp-concat");
 const terser = require("gulp-terser");
 const svgSymbols = require('gulp-svg-symbols');
+const ghPages = require('gulp-gh-pages');
 
 // Styles
 
@@ -58,6 +59,19 @@ const scripts = () => {
 }
 
 exports.scripts = scripts;
+
+const vendorScripts = () => {
+  return gulp.src("source/js/vendor/*.js")
+    .pipe(plumber())
+    .pipe(concat("vendor.js"))
+    .pipe(gulp.dest("build/js/"))
+    .pipe(terser())
+    .pipe(concat("vendor.min.js"))
+    .pipe(gulp.dest("build/js/"))
+    .pipe(sync.stream());
+}
+
+exports.vendorScripts = vendorScripts;
 
 // Sprite
 
@@ -111,6 +125,7 @@ const copy = (done) => {
     "source/assets/**/*.svg",
     "source/js/*.js",
     "source/assets/*.mp4",
+    "source/assets/*.webm",
     "!source/assets/*.svg",
   ], {
     base: "source"
@@ -168,6 +183,7 @@ const build = gulp.series(
     styles,
     html,
     scripts,
+    vendorScripts,
     sprite,
     createWebp
   ),
@@ -185,6 +201,7 @@ exports.default = gulp.series(
     styles,
     html,
     scripts,
+    vendorScripts,
     createWebp,
     sprite
   ),
@@ -192,3 +209,11 @@ exports.default = gulp.series(
     server,
     watcher
   ));
+
+
+// deploy
+
+gulp.task('deploy', function () {
+  return gulp.src('./build/**/*')
+      .pipe(ghPages());
+});

@@ -1,28 +1,34 @@
 document.addEventListener( 'DOMContentLoaded', function() {
-  const splide = new Splide( '.splide', {
-    perMove: 1,
-    fixedWidth: '50%',
-    type: 'loop',
-    pagination: 'slider',
-    arrows: false,
-    autoplay: true,
-    pauseOnHover: true,
+  if(document.querySelector('.photos__carousel')) {
+    const photosCarousel = new Splide( '.photos__carousel', {
+      perMove: 1,
+      fixedWidth: '50%',
+      type: 'loop',
+      pagination: 'slider',
+      arrows: false,
+      autoplay: true,
+      pauseOnHover: true,
 
-    classes: {
-      pagination: 'bullets__list',
-      page: 'bullet',
-    },
-
-    breakpoints: {
-      1060: {
-        fixedWidth: '360px',
-        focus: 'center',
+      classes: {
+        pagination: 'bullets',
+        page: 'bullets__item',
       },
 
-      768: {
-        fixedWidth: '100%',
-      },
-    }
-  } );
-  splide.mount();
-} );
+      breakpoints: {
+        1060: {
+          fixedWidth: '360px',
+          focus: 'center',
+        },
+
+        768: {
+          fixedWidth: '100%',
+        },
+      }
+    });
+
+    photosCarousel.mount();
+    document.querySelector('.photos__carousel').classList.remove('photos__carousel--nojs');
+    const photosList = document.querySelector('.photos__slides');
+    photosList.classList.remove('photos__slides--nojs');
+  }
+});

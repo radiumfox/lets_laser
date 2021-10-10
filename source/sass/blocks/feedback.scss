@@ -106,7 +106,8 @@
 
 .feedback__success .button {
   @include font(14px, 21px, 600);
-  width: 223px;
+  width: 226px;
+  cursor: pointer;
 
   &:hover {
     color: rgba($basic-dark, 0.7);

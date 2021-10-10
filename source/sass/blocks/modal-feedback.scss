@@ -21,10 +21,6 @@
   }
 }
 
-// .modal-feedback__wrapper {
-//   margin-bottom: 0;
-// }
-
 .modal-feedback__form {
   background-color: $basic-light;
   min-height: 400px;
@@ -69,6 +65,7 @@
 
 .modal-feedback__button-close {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .modal-feedback__button {

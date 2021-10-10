@@ -40,7 +40,6 @@
   cursor: pointer;
   margin-left: auto;
   margin-top: 22px;
-  margin-right: 10px;
 
   @media(max-width: $tablet-width-only) {
     display: none;
@@ -125,7 +124,7 @@
     display: flex;
     align-items: center;
 
-    @media(max-width: $mobile-width-only) {
+    @media(max-width: $tablet-width-only) {
       flex-direction: row-reverse;
     }
   }
@@ -163,8 +162,7 @@
 }
 
 .contacts__wrapper {
-  padding: 60px 20px 140px 30px;
-  background-color: rgba($basic-dark, 0.6);
+  padding: 50px 0 140px 30px;
   max-width: 300px;
 
   @media(max-width: $tablet-width-only) {
