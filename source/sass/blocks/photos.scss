@@ -15,33 +15,19 @@
 
 .photos .bullets__list {
   margin: 28px auto 0;
-}
+  padding-left: 0;
+  position: relative;
 
-.photos ul {
-  @include reset-list;
-  display: flex;
-  align-items: flex-end;
-  margin: 0 auto;
-  flex-wrap: nowrap;
-  min-width: max-content;
-
-  @media(max-width: $tablet-width-only) {
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-}
-
-.photos li {
-  margin-right: 70px !important;
-  width: min-content !important;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @media(max-width: $tablet-width-only) {
-    margin: 0 auto !important;
+  @media(max-width: $mobile-width-only) {
     padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  li {
+    @media(max-width: $mobile-width-only) {
+      width: 100%;
+    }
+
   }
 }
 
@@ -55,9 +41,8 @@
   }
 }
 
-.wrap {
+.photos__carousel-wrapper {
   max-width: 1040px;
-  width: 100vw;
   margin: 0 auto;
   overflow-x: auto;
   scrollbar-width: none;
@@ -65,34 +50,61 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media(max-width: 1060px) {
+    max-width: 100vw;
+  }
 }
 
-.photos__bullets-wrapper {
-  padding: 0 10px;
-}
-
-.photos img {
-  background-color: $secondary-light;
+.photos__slides {
+  align-items: flex-end;
 }
 
 .photos {
-  .glide__slide img {
+  .splide__slide img {
     width: 450px;
     height: 609px;
+    transition: all 0.1s ease-out;
+
+    @media(max-width: $desktop-small) {
+      width: 340px;
+      height: 457px;
+    }
 
     @media(max-width: $mobile-width-only) {
       width: 340px;
       height: 457px;
-      text-align: center;
     }
   }
-  .glide__slide--active img {
+
+  .splide__slide.is-active img {
     width: 520px;
     height: 700px;
 
+    @media(max-width: $desktop-small) {
+      width: 360px;
+      height: 477px;
+    }
+
     @media(max-width: $mobile-width-only) {
       width: 340px;
       height: 457px;
     }
+  }
+}
+
+.photos__slide {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 700px;
+
+  @media(max-width: $desktop-small) {
+    justify-content: center;
+    height: 477px;
+  }
+
+  @media(max-width: $mobile-width-only) {
+    height: 457px;
   }
 }

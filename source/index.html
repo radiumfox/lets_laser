@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page" lang="en">
+<html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -125,10 +125,10 @@
         </section>
       </div>
 
-      <video class="page-header__movie" muted playsinline>
-        <source srcset="assets/pexels-koolshooters-8955991-mob.webm" media="(max-width: 767px)" type="video/webm">
-        <source srcset="assets/pexels-koolshooters-8955991-mob.mp4" media="(max-width: 767px)" type="video/mp4">
-        <source srcset="assets/pexels-koolshooters-8955991.webm" type="video/webm">
+      <video class="page-header__movie" muted playsinline preload="metadata">
+        <source src="assets/pexels-koolshooters-8955991-mob.webm" media="(max-width: 767px)" type="video/webm">
+        <source src="assets/pexels-koolshooters-8955991-mob.mp4" media="(max-width: 767px)" type="video/mp4">
+        <source src="assets/pexels-koolshooters-8955991.webm" type="video/webm">
         <source src="assets/pexels-koolshooters-8955991.mp4" type="video/mp4">
       </video>
     </header>
@@ -164,10 +164,10 @@
               </div>
           </div>
           <div class="about__movie-box">
-            <video class="about__movie" muted playsinline>
-              <source srcset="assets/pexels-karolina-grabowska-8371229-mob.webm" media="(max-width: 767px)" type="video/webm">
-              <source srcset="assets/pexels-karolina-grabowska-8371229-mob.mp4" media="(max-width: 767px)" type="video/mp4">
-              <source srcset="assets/pexels-karolina-grabowska-8371229.webm" type="video/webm">
+            <video class="about__movie" muted playsinline preload="metadata">
+              <source src="assets/pexels-karolina-grabowska-8371229-mob.webm" media="(max-width: 767px)" type="video/webm">
+              <source src="assets/pexels-karolina-grabowska-8371229-mob.mp4" media="(max-width: 767px)" type="video/mp4">
+              <source src="assets/pexels-karolina-grabowska-8371229.webm" type="video/webm">
               <source src="assets/pexels-karolina-grabowska-8371229.mp4" type="video/mp4">
             </video>
             <button type="button">
@@ -410,10 +410,10 @@
               </ul>
             </div>
           </div>
-          <video class="reviews__movie" muted playsinline>
-            <source srcset="assets/pexels-anna-nekrashevich-8516672-mob.webm" media="(max-width: 767px)" type="video/webm">
-            <source srcset="assets/pexels-anna-nekrashevich-8516672-mob.mp4" media="(max-width: 767px)" type="video/mp4">
-            <source srcset="assets/pexels-anna-nekrashevich-8516672.webm" type="video/webm">
+          <video class="reviews__movie" muted playsinline preload="metadata">
+            <source src="assets/pexels-anna-nekrashevich-8516672-mob.webm" media="(max-width: 767px)" type="video/webm">
+            <source src="assets/pexels-anna-nekrashevich-8516672-mob.mp4" media="(max-width: 767px)" type="video/mp4">
+            <source src="assets/pexels-anna-nekrashevich-8516672.webm" type="video/webm">
             <source src="assets/pexels-anna-nekrashevich-8516672.mp4" type="video/mp4">
           </video>
         </div>
@@ -585,39 +585,31 @@
         </div>
       </section>
 
-      <!-- <section class="photos" id="photos">
+      <section class="photos" id="photos">
         <h2>Фото</h2>
         <div class="photos__wrapper">
-          <div class="wrap">
-            <div class="glide photos__carousel">
-              <div class="glide__track" data-glide-el="track">
-                <ul class="s">
-                  <li class=" photos__slide glide__slide">
+          <div class="photos__carousel-wrapper">
+            <div id="photosCarousel" class="photos__carousel splide">
+              <div class="splide__track">
+                <ul class="photos__slides splide__list">
+                  <li class="photos__slide splide__slide">
                     <img src="assets/photo1.jpg" width="520" height="700" alt="photo">
                   </li>
-                  <li class=" photos__slide glide__slide">
+                  <li class="photos__slide splide__slide">
                     <img src="assets/photo2.jpg" width="520" height="700" alt="photo">
                   </li>
-                  <li class=" photos__slide glide__slide">
+                  <li class="photos__slide splide__slide">
                     <img src="assets/photo3.jpg" width="520" height="700" alt="photo">
                   </li>
-                  <li class=" photos__slide glide__slide">
+                  <li class="photos__slide splide__slide">
                     <img src="assets/photo4.jpg" width="520" height="700" alt="photo">
                   </li>
                 </ul>
-                <div class="photos__bullets-wrapper">
-                  <div class="glide__bullets bullets__list" data-glide-el="controls[nav]">
-                    <button class="bullet" type="button" data-glide-dir="=0" aria-label="К первому слайду"></button>
-                    <button class="bullet" type="button" data-glide-dir="=1" aria-label="Ко второму слайду"></button>
-                    <button class="bullet" type="button" data-glide-dir="=2" aria-label="К третьему слайду"></button>
-                    <button class="bullet" type="button" data-glide-dir="=3" aria-label="К четвертому слайду"></button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
 
       <section class="feedback" id="feedback">
         <div class="feedback__wrapper">

@@ -1,20 +1,28 @@
-const photosCarousel = document.querySelector('.photos__carousel');
+document.addEventListener( 'DOMContentLoaded', function() {
+  const splide = new Splide( '.splide', {
+    perMove: 1,
+    fixedWidth: '50%',
+    type: 'loop',
+    pagination: 'slider',
+    arrows: false,
+    autoplay: true,
+    pauseOnHover: true,
 
-if(photosCarousel) {
-  const glidePhotos = new Glide('.photos__carousel', {
-    type: 'slider',
-    startAt: 0,
-    autoplay: 3000,
-    focusAt: '0',
-    perView: 2,
+    classes: {
+      pagination: 'bullets__list',
+      page: 'bullet',
+    },
 
     breakpoints: {
       1060: {
-        perView: 1,
-        focusAt: 'center',
-      }
-    }
-  });
+        fixedWidth: '360px',
+        focus: 'center',
+      },
 
-  glidePhotos.mount();
-}
+      768: {
+        fixedWidth: '100%',
+      },
+    }
+  } );
+  splide.mount();
+} );

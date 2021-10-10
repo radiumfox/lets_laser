@@ -1,7 +1,7 @@
 .bullets__list {
   border: none;
   width: fit-content;
-  border-bottom: 1px solid $tertiary-light;
+  // border-bottom: 1px solid $tertiary-light;
   line-height: 0;
   font-size: 0;
   cursor: pointer;
@@ -9,8 +9,25 @@
   justify-content: stretch;
   z-index: 2;
 
+  position: absolute;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: $tertiary-light;
+  }
+
   @media(max-width: $mobile-width-only) {
     width: 100%;
+
+    &::before {
+      width: calc(100% - 20px);
+      left: 10px;
+    }
   }
 }
 
@@ -30,7 +47,7 @@
   }
 }
 
-.bullet.glide__bullet--active {
+.bullet.is-active {
   border-bottom: 1px solid $basic-dark;
 }
 
