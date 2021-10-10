@@ -14,7 +14,7 @@
 }
 
 .intro__title {
-  padding: 240px 10px 60px;
+  padding: 345px 10px 60px;
   max-width: 1050px;
   margin: 0 auto;
 
@@ -32,9 +32,10 @@
     color: $basic-light;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: -0.03em;
-    max-width: 790px;
+    letter-spacing: -0.02em;
+    max-width: 840px;
     margin-left: auto;
+    text-align: right;
 
     @media(max-width: $tablet-width-only) {
       max-width: 600px;
@@ -65,7 +66,7 @@
     @media(max-width: $mobile-width-only) {
       @include font(10px, 15px, 400);
       padding-top: 10px;
-      padding-bottom: 18px;
+      padding-bottom: 15px;
     }
   }
 }
@@ -110,7 +111,6 @@
   @media(max-width: $mobile-width-only) {
     @include font(10px, 15px, 600);
     letter-spacing: 0.2em;
-
   }
 }
 
@@ -135,7 +135,7 @@
     color: $basic-light;
     letter-spacing: 0.2em;
     text-transform: lowercase;
-    max-width: 350px;
+    max-width: 370px;
     margin: 0;
 
     @media(max-width: $mobile-width-only) {

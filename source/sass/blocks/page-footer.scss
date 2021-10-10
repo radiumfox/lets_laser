@@ -5,7 +5,7 @@
 .page-footer__wrapper {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 85px 10px 70px;
+  padding: 85px 10px 60px;
   display: grid;
   grid-template-columns: 25% 21% 52%;
   grid-template-rows: auto auto;
@@ -74,10 +74,9 @@
   background-size: 24px 32px;
   background-repeat: no-repeat;
   padding: 3px 0;
-
   padding-left: 40px;
-  max-width: 359px;
-  letter-spacing: 0.3px;
+  max-width: 380px;
+  letter-spacing: 0.5px;
 
   &::before {
     content: "";
@@ -85,7 +84,7 @@
     height: 1px;
     width: 80%;
     background-color: $basic-light;
-    bottom: -5px;
+    bottom: 0;
   }
 
   &:hover {
@@ -98,12 +97,12 @@
     background-image: none;
     padding-left: 0;
 
+    &::before {
+      width: 0;
+    }
+
     &:hover {
       font-weight: 700;
-
-      &::before {
-        width: 90%;
-      }
     }
   }
 }
@@ -168,7 +167,7 @@ a.page-footer__logo {
 }
 
 .page-footer__logo-image {
-  margin-bottom: 41px;
+  margin-bottom: 38px;
 
   @media(max-width: $mobile-width-only) {
     margin-bottom: 0;
@@ -196,7 +195,7 @@ a.page-footer__logo {
 }
 
 .page-footer__contacts-list li {
-  padding-bottom: 20px;
+  padding-bottom: 17px;
 
   @media(max-width: $mobile-width-only) {
     padding-bottom: 12px;

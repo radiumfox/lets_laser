@@ -1,20 +1,34 @@
-const photosCarousel = document.querySelector('.photos__carousel');
+document.addEventListener( 'DOMContentLoaded', function() {
+  if(document.querySelector('.photos__carousel')) {
+    const photosCarousel = new Splide( '.photos__carousel', {
+      perMove: 1,
+      fixedWidth: '50%',
+      type: 'loop',
+      pagination: 'slider',
+      arrows: false,
+      autoplay: true,
+      pauseOnHover: true,
 
-if(photosCarousel) {
-  const glidePhotos = new Glide('.photos__carousel', {
-    type: 'slider',
-    startAt: 0,
-    autoplay: 3000,
-    focusAt: '0',
-    perView: 2,
+      classes: {
+        pagination: 'bullets',
+        page: 'bullets__item',
+      },
 
-    breakpoints: {
-      400: {
-        perView: 1,
-        focusAt: 'center',
+      breakpoints: {
+        1060: {
+          fixedWidth: '360px',
+          focus: 'center',
+        },
+
+        768: {
+          fixedWidth: '100%',
+        },
       }
-    }
-  });
+    });
 
-  glidePhotos.mount();
-}
+    photosCarousel.mount();
+    document.querySelector('.photos__carousel').classList.remove('photos__carousel--nojs');
+    const photosList = document.querySelector('.photos__slides');
+    photosList.classList.remove('photos__slides--nojs');
+  }
+});

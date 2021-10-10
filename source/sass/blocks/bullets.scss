@@ -1,7 +1,6 @@
 .bullets {
   border: none;
   width: fit-content;
-  border-bottom: 1px solid $tertiary-light;
   line-height: 0;
   font-size: 0;
   cursor: pointer;
@@ -9,12 +8,29 @@
   justify-content: stretch;
   z-index: 2;
 
+  position: absolute;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: $tertiary-light;
+  }
+
   @media(max-width: $mobile-width-only) {
     width: 100%;
+
+    &::before {
+      width: calc(100% - 20px);
+      left: 10px;
+    }
   }
 }
 
-.bullet {
+.bullets__item {
   width: 85px;
   background-color: transparent;
   border: none;
@@ -30,23 +46,23 @@
   }
 }
 
-.bullet.glide__bullet--active {
+.bullets__item.is-active {
   border-bottom: 1px solid $basic-dark;
 }
 
-.bullet.active {
+.bullets__item.active {
   border-bottom: 1px solid $basic-dark;
 }
 
-.bullet__text {
+.bullets__text {
   @include font(144px, 170px, 400);
   font-family: "Plain", sans-serif;
   position: absolute;
-  bottom: 2px;
-  left: 0;
+  bottom: -2px;
+  left: -38px;
   width: max-content;
   text-align: left;
-  color: black;
+  color: $basic-dark;
   display: none;
 
   span {
@@ -58,7 +74,7 @@
     left: 10px;
 
     span {
-      @include font(20px, 32px, 400);
+      @include font(14px, 32px, 400);
     }
   }
 
@@ -67,6 +83,6 @@
   }
 }
 
-.bullet.active .bullet__text {
+.bullets__item.active .bullets__text {
   display: inline;
 }

@@ -73,14 +73,19 @@
   }
 
   &--tel {
-    width: 170px;
+    width: 180px;
     margin: 12px 0 0 auto;
 
-    &:hover {
-      font-weight: 700;
+    a {
+      @include font(20px, 30px, 400);
+      color: $basic-light;
+      text-decoration: none;
+      text-transform: lowercase;
+      letter-spacing: 0.3px;
 
-      &::before {
-        width: 90%;
+      &:hover {
+        font-weight: 700;
+        letter-spacing: 0;
       }
     }
   }

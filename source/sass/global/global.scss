@@ -11,7 +11,33 @@
   white-space: nowrap;
 }
 
-picture {
-  display: block;
-  line-height: 0;
+// picture {
+//   display: block;
+//   line-height: 0;
+// }
+
+.fade {
+  transition: all .2s ease-in-out;
+
+  &:not(.show) {
+    opacity: 0;
+  }
+}
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+
+  &.collapse-horizontal {
+    width: 0;
+    height: auto;
+    transition: all .2s ease-in-out;
+  }
 }

@@ -31,7 +31,7 @@
 
   @media(max-width: $mobile-width-only) {
     margin-top: 47px;
-    margin-bottom: 51px;
+    margin-bottom: 35px;
   }
 }
 
@@ -72,13 +72,13 @@
     min-width: 170px;
     max-width: 170px;
     object-fit: cover;
-    height: 649px;
+    height: 644px;
   }
 }
 
 .about button {
   position: absolute;
-  bottom: 74px;
+  bottom: 82px;
   right: 50px;
   background-color: $basic-light;
   background-image: url("../assets/chat-icon.svg");

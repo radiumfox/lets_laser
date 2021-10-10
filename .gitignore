@@ -3,3 +3,4 @@ build
 source/css/*.css
 source/css/*.map
 package-lock.json
+.publish
