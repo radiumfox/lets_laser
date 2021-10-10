@@ -1,11 +1,9 @@
 .pricing__wrapper {
   max-width: 1040px;
   margin: 0 auto;
-
   margin-bottom: 190px;
 
   @media(max-width: $mobile-width-only) {
-
     margin-bottom: 48px;
   }
 }
@@ -73,6 +71,7 @@
     display: none;
   }
 }
+
 
 .pricing__table {
   font-family: "Optimo Plain", "Helvetica", sans-serif;
