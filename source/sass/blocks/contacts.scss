@@ -136,17 +136,19 @@
     @media(max-width: $tablet-width-only) {
       width: 29px;
       height: 29px;
+      margin-right: 20px;
+      margin-left: 0;
     }
 
     @media(max-width: $mobile-width-only) {
       width: 25px;
       height: 25px;
-      margin-right: 20px;
-      margin-left: 0;
+
+
     }
   }
 
-  @media(max-width: $mobile-width-only) {
+  @media(max-width: $tablet-width-only) {
     align-items: flex-start;
   }
 }
